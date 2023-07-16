@@ -18,7 +18,7 @@ export const submitNewTask = async (
 
     const newPost = {
       ...res.data,
-      user,
+   
     
    
     };

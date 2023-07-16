@@ -1,10 +1,10 @@
-const TaskModel = require("@/models/TaskModel");
-const UserModel = require("@/models/UserModel");
+const TaskModel = require("../models/TaskModel");
+const UserModel = require("../models/UserModel");
 const express = require("express");
 const router = express.Router();
+const authMiddleware = require("../middleware/authMiddleware");
 
-
-router.post("/", async (req, res) => {
+router.post("/", authMiddleware, async (req, res) => {
      const { userId } = req; 
      const {name,task,status,img,index,time}=req.body
   try {
@@ -13,25 +13,27 @@ router.post("/", async (req, res) => {
  user = await TaskModel.find({user:userId})
 
  const exists =
-user.some(status=> status.status === "completed"&&status.index===index);
+user.some(status=> status.status === "complete"&&status.index===index);
+
 if(exists){
-  return res.status(404).send(" data already exist");
+  return res.status(401).send(" data already exist");
 }
 if(Date.now()<time){
 
-  user = await TaskModel.findOne({index:index})
- 
-  user.status,
-  user.time=Date.now(),
-  user.a=img[0]
-  user.b=img[1]
-  user.c=img[2]
-  user.d=img[3]
-  user.e=img[4]
-  user.f=img[5]
-  user.g=img[6]
-  user.h=img[7]
-  user.i=img[8]
+  user = await TaskModel.findOne({user:userId})
+  const exists =
+  user.filter(status=> status.status === "completed"&&status.index===index);
+  exists.status,
+  exists.time=Date.now(),
+  exists.a=img[0]
+  exists.b=img[1]
+  exists.c=img[2]
+  exists.d=img[3]
+  exists.e=img[4]
+  exists.f=img[5]
+  exists.g=img[6]
+  exists.h=img[7]
+  exists.i=img[8]
  await user.save();
   
 
@@ -89,20 +91,20 @@ router.get("/", authMiddleware,async (req, res) => {
      if(getFollowingData==="mapping")
      {
        post =
-      user.filter(status=> status.status === "completed"&&status.name==="mapping");
+      user.filter(status=> status.status === "completed"&&status.task==="mapping");
 
      }
      else
      if(getFollowingData==="cleaning")
      {
      post =
-      user.filter(status=> status.status === "completed"&&status.name==="cleaning");
+      user.filter(status=> status.status === "completed"&&status.task==="cleaning");
 
      } else
      if(getFollowingData==="planting")
      {
       post =
-      user.filter(status=> status.status === "completed"&&status.name==="planting");
+      user.filter(status=> status.status === "completed"&&status.task==="planting");
 
      }
          

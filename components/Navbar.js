@@ -1,6 +1,20 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
+import { GoogleLogin } from "@react-oauth/google";
 
-function Navbar() {
+import { loginUser, logoutUser } from "../utils/authUser";
+import Link from "next/link";
+
+function Navbar({user}) {
+
+  const handelSubmit = async (credentialResponse) => {
+    let user = {
+      
+      client_id: credentialResponse.clientId,
+      jwtToken: credentialResponse.credential,
+    };
+
+    await loginUser(user);
+  };
   return (
     <>
       <nav className="z-10 w-full absolute">
@@ -86,12 +100,22 @@ function Navbar() {
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="#blog"
-                      className="block md:px-4 transition hover:text-primary"
-                    >
-                      <span>Blog</span>
-                    </a>
+                  {!user ? (
+              <GoogleLogin
+                onSuccess={(credentialResponse) => {
+                  handelSubmit(credentialResponse);
+                }}
+                useOneTap
+                type="icon"
+                shape="circle"
+                onError={() => {
+                  
+                }}
+              />
+             
+            ) : <div>
+              logout
+            </div>}
                   </li>
                 </ul>
               </div>

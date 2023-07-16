@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-const Instruction = () => {
+import Form from './Form';
+const Instruction = ({user}) => {
   return (
     <div className='bg-white dark:bg-gray-900'>
      
@@ -47,7 +48,7 @@ const Instruction = () => {
           </div>
         </div>
       </div>
-   
+   <Form name={user.name} task={"cleaning"} status={"complete"} index={0}time={"0"}/>
     </div>
   );
 };

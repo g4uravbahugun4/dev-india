@@ -10,7 +10,7 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Home({user}) {
   const slides = [<Mapping />, <Growing />, <Cleaning />]
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -30,7 +30,7 @@ export default function Home() {
 
   return (
     <>
-      <Navbar />
+      <Navbar user={user}/>
       <div className='bg-gray-900 h-screen pt-28 '>
 
         <div className='sm:w-4/5 sm:m-auto sm:p-3 sm:border sm:hidden sm:justify-evenly sm:bg-white w-full p-3 m-auto relative block group'>
