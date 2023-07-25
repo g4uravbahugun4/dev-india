@@ -8,14 +8,18 @@ import { HiChevronLeft } from "react-icons/hi";
 function Mapping({user}) {
 
 const[slideIndex,setSlideIndex]=useState(1)
+
   const handleNextSlide = () => {
-    setSlideIndex(prevIndex => (prevIndex < slides.length - 1 ? prevIndex + 1 : prevIndex));
+    // Limit slideIndex to be less than or equal to 20
+    setSlideIndex(Math.min(slideIndex + 1, 20));
+    console.log(slideIndex)
   };
 
   const handlePrevSlide = () => {
-    setSlideIndex(prevIndex => (prevIndex > 0 ? prevIndex - 1 : prevIndex));
+    // Limit slideIndex to be greater than or equal to 1
+    setSlideIndex(Math.max(slideIndex - 1, 1));
+    console.log(slideIndex)
   };
-
 let arr= 
 [
 {a:"https://media.istockphoto.com/id/639426686/photo/asian-little-girl-helping-his-father-to-plant-the-tree.jpg?s=612x612&w=0&k=20&c=PdhVJdR7jnM7VqRuW-JZXuva5jhBa0zqUPy_aGVvgbM=",
@@ -25,7 +29,7 @@ b:"https://media.istockphoto.com/id/639426686/photo/asian-little-girl-helping-hi
 b: " https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}
 ];
 
-  const slides = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+  const slides = [<Card />, <Card />, <Card />, <Card />, <Card />, <Card />, <Card />, <Card />, <Card />, <Card />]
 
   return (
    <>

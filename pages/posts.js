@@ -11,7 +11,7 @@ import  { useState} from "react";
 import PostCard from "@/components/PostCard";
 
 
-export default function Post({postsData,user}) {
+export default function Posts({postsData,user}) {
 
   const [posts, setPosts] = useState(postsData||[0,1,2,3]);
 

@@ -30,9 +30,8 @@ nextApp.prepare().then(() => {
    
   
   app.use("/api/auth", require("./api/auth"));
- 
   app.use("/api/task", require("./api/task"));
-  
+  app.use("/api/payment",require("./api/payment"));
 
   app.all("*", (req, res) => handle(req, res));
   
