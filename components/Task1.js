@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Form from './Form';
-const Instruction = ({user}) => {
+const Task1 = ({user}) => {
   return (
     <div className='bg-white dark:bg-gray-900'>
    
@@ -71,4 +71,4 @@ const Instruction = ({user}) => {
   );
 };
 
-export default Instruction;
+export default Task1;

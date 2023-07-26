@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
  
-const Instruction = () => {
+const Task3 = () => {
   return (
     <div className='bg-white dark:bg-gray-900'>
    
@@ -91,4 +91,4 @@ const Instruction = () => {
   );
 };
 
-export default Instruction;
+export default Task3;

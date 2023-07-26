@@ -5,6 +5,15 @@ const PostSchema = new Schema(
   {
     user: { type: Schema.Types.ObjectId, ref: "User" },
 
+    name: { type: String, required: true },
+    rookies:{type:Boolean,default: true},
+
+    traine:{type:Boolean,default:false},
+    elite:{type:Boolean,default:false},
+
+    core:{type:Boolean,default:false},
+
+    dev:{type:Boolean,default:false},
    
     text: { type: String, required: true },
 

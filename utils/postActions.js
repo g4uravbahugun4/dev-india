@@ -7,27 +7,85 @@ export const Axios = axios.create({
   baseURL: `${baseUrl}/api/task`,
   headers: { Authorization: cookie.get("token") }
 });
+export const Axios2 = axios.create({
+  baseURL: `${baseUrl}/api/newtask`,
+  headers: { Authorization: cookie.get("token") }
+});
 
+
+
+const toastError = error => toast.error(catchErrors(error));
 
 
 export const submitNewTask = async (
-  name,task,status,img,index,time
+  name,task,status,img,index,time, rookies,
+ traine, elite, core, dev
 ) => {
   try {
-    const res = await Axios.post("/", { name,task,status,img,index,time });
+    const res = await Axios.post("/", { name,task,status,img,index,time,
+      rookies,
 
-    const newPost = {
-      ...res.data,
+      traine,
+      elite,
+    
+      core,
+    
+      dev });
+
+    // const newPost = {
+    //   ...res.data,
    
     
    
-    };
+    // };
 
     // setPosts(prev => [newPost, ...prev]);
     // setNewPost({ title: "", discription: "" });
   } catch (error) {
-    const errorMsg = catchErrors(error);
-    setError(errorMsg);
+    toastError(error);
   }
 };
 
+
+
+
+export const submitNewPost = async ( 
+  picUrl,text,rookies,traine,
+  elite, core,dev
+  ) => {
+  try {
+    const { data } = await Axios2.post("/", { picUrl,text,rookies,traine,
+      elite, core,dev });
+
+    return { data };
+  } catch (error) {
+    throw catchErrors(error);
+  }
+};
+
+export const deletePost = async (postId, setPosts) => {
+  try {
+    await Axios2.delete(`/${postId}`);
+    setPosts(prev => prev.filter(post => post._id !== postId));
+
+    toast.info("Post deleted successfully");
+  } catch (error) {
+    toastError(error);
+  }
+};
+
+export const likePost = async (postId, userId, setLikes, like = true) => {
+  try {
+    if (like) {
+      await Axios2.post(`/like/${postId}`);
+      setLikes(prev => [...prev, { user: userId }]);
+    }
+    //
+    else if (!like) {
+      await Axios2.put(`/unlike/${postId}`);
+      setLikes(prev => prev.filter(like => like.user !== userId));
+    }
+  } catch (error) {
+    toastError(error);
+  }
+};

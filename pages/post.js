@@ -1,11 +1,11 @@
 
 import  { useState} from "react";
 
-// import axios from "axios";
-// import baseUrl from "../utils/baseUrl";
+import axios from "axios";
+import baseUrl from "../utils/baseUrl";
 
-// import cookie from "js-cookie";
-// import { parseCookies } from "nookies";
+import cookie from "js-cookie";
+import { parseCookies } from "nookies";
 
 // import InfiniteScroll from "react-infinite-scroll-component";
 import PostCard from "@/components/PostCard";
@@ -13,8 +13,8 @@ import PostCard from "@/components/PostCard";
 
 export default function Post({postsData,user}) {
 
-  const [posts, setPosts] = useState(postsData||[0,1,2,3]);
-
+  const [posts, setPosts] = useState(postsData||[]);
+console.log(postsData)
   const [hasMore, setHasMore] = useState(true);
   const [pageNumber, setPageNumber] = useState(2);
 
@@ -46,7 +46,7 @@ export default function Post({postsData,user}) {
           dataLength={posts.length}> */}
    {posts?.map(post => (
     <div className="w-full px-5 py-5  ">
-       <PostCard/>
+       <PostCard post={post}/>
       </div>  
 
             ))}
@@ -57,18 +57,18 @@ export default function Post({postsData,user}) {
   )
 }
 
-// export const getServerSideProps = async ctx => {
-//   try {
+export const getServerSideProps = async ctx => {
+  try {
    
-//     const { token } = parseCookies(ctx);
-//     const res = await axios.get(`${baseUrl}/api/task`, {
-//       headers: { Authorization: token },
-//       params: { pageNumber: 1 }
+    const { token } = parseCookies(ctx);
+    const res = await axios.get(`${baseUrl}/api/task/post`, {
+      headers: { Authorization: token },
+      // params: { pageNumber: 1 }
       
-//     });
+    });
 
-//     return { props: { postsData: res.data } };
-//   } catch (error) {
-//     return { props: { errorLoading: true } };
-//   }
-// };
+    return { props: { postsData: res.data } };
+  } catch (error) {
+    return { props: { errorLoading: true } };
+  }
+};

@@ -1,7 +1,7 @@
-import Task1 from '@/components/Task2'
+import Task1 from '@/components/Task1'
 import React from 'react'
 import { useRouter } from "next/router";
-import Task2 from '@/components/Task1';
+import Task2 from '@/components/Task2';
 import Task3 from '@/components/Task3';
 
 function Tasks({user}) {
@@ -12,7 +12,9 @@ function Tasks({user}) {
   <>
  
   
-{name==='a'?<Task1 user={user}/>:name==='b'?<Task2/>:<Task3/>}
+{name==='a'&&<Task1 user={user}/>}
+{name==='b'&&<Task2/>}
+{name==='c'&&<Task3/>}
   
   </>
   )

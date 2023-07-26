@@ -1,14 +1,13 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import { useState } from 'react'
 import Mapping from '@/components/Mapping'
 import Growing from '@/components/Growing'
 import Cleaning from '@/components/Cleaning'
-import { RxDotFilled } from 'react-icons/rx';
+
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
-import { useState } from 'react'
+
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
-const inter = Inter({ subsets: ['latin'] })
+
 
 export default function Home({user}) {
   const slides = [<Mapping />, <Growing />, <Cleaning />]

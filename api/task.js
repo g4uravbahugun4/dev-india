@@ -66,9 +66,11 @@ userpoints.points=point[index]
 if(time!="0"){
   let days = 7;
 let newDate = new Date(Date.now()+days*24*60*60*1000);
-userpoints.time.push({index,time:newDate})
-}
-await userpoints.save()
+userpoints.time.push({index:index,time:newDate})
+}else{
+userpoints.time.push({completed:true,index:index})}
+await userpoints.save();
+
   } catch (error) {
     console.error(error);
     return res.status(500).send(`Server error`);
@@ -80,8 +82,8 @@ router.get("/", authMiddleware,async (req, res) => {
     try {
       const { userId } = req; 
       let { getFollowingData } = req.query;
-      getFollowingData = JSON.parse(getFollowingData);
-    
+   
+    console.log(getFollowingData)
       const user = await TaskModel.find({user:userId})
         
       if (!user) {
@@ -98,7 +100,7 @@ router.get("/", authMiddleware,async (req, res) => {
      if(getFollowingData==="cleaning")
      {
      post =
-      user.filter(status=> status.status === "completed"&&status.task==="cleaning");
+      user.filter(status=> status.task==="cleaning");
 
      } else
      if(getFollowingData==="planting")
@@ -116,7 +118,18 @@ router.get("/", authMiddleware,async (req, res) => {
       return res.status(500).send(`Server error`);
     }
   });
-
+  router.get("/post", authMiddleware,async (req, res) => {
+    try {
+    
+      const user = await TaskModel.find()
+         
+ 
+      return res.json(user);
+    } catch (error) {
+      console.error(error);
+      return res.status(500).send(`Server error`);
+    }
+  });
  
 
 
