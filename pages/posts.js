@@ -11,7 +11,7 @@ import { parseCookies } from "nookies";
 import PostCard from "@/components/PostCard";
 
 
-export default function Post({postsData,user}) {
+export default function Posts({postsData,user}) {
 
   const [posts, setPosts] = useState(postsData||[]);
 console.log(postsData)

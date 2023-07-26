@@ -24,6 +24,7 @@
     "nodemon": "^3.0.1",
     "nookies": "^2.5.2",
     "postcss": "8.4.23",
+    "razorpay": "^2.9.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.10.1",
