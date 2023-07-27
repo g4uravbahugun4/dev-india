@@ -29,7 +29,7 @@ function Navbar({user}) {
             />
             <div className="relative z-20 w-full flex justify-between lg:w-max md:px-0">
               <a
-                href="#home"
+                href="/"
                 aria-label="logo"
                 className="flex space-x-2 items-center"
               >
@@ -91,14 +91,16 @@ function Navbar({user}) {
                       <span>Solution</span>
                     </a>
                   </li>
-                  <li>
-                    <a
-                      href="#testimonials"
-                      className="block md:px-4 transition hover:text-primary"
-                    >
-                      <span>Testimonials</span>
-                    </a>
-                  </li>
+                 {user ? 
+                   <li>
+                   <Link
+                     href="/profile"
+                     className="block md:px-4 transition hover:text-primary"
+                   >
+                     <img src="images/user.svg" alt="profile" />
+                   </Link>
+                 </li> : null
+                 }
                   <li>
                   {!user ? (
               <GoogleLogin
@@ -114,7 +116,7 @@ function Navbar({user}) {
               />
              
             ) : <div>
-              logout
+              <img src="/images/logoutL.svg" alt="logout" />
             </div>}
                   </li>
                 </ul>
