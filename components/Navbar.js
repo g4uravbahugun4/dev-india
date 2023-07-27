@@ -1,12 +1,16 @@
 import React, { useRef, useEffect, useState } from "react";
 import { GoogleLogin } from "@react-oauth/google";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { loginUser, logoutUser } from "../utils/authUser";
 import Link from "next/link";
 
 function Navbar({user}) {
-
+  const notify = (data) => toast(data);
   const handelSubmit = async (credentialResponse) => {
+    let data="loged in"
+    notify(data)
+
     let user = {
       
       client_id: credentialResponse.clientId,
@@ -102,6 +106,7 @@ function Navbar({user}) {
                  </li> : null
                  }
                   <li>
+                  <ToastContainer />
                   {!user ? (
               <GoogleLogin
                 onSuccess={(credentialResponse) => {
@@ -111,7 +116,8 @@ function Navbar({user}) {
                 type="icon"
                 shape="circle"
                 onError={() => {
-                  
+                  let data="can't log in"
+                  notify(data)
                 }}
               />
              

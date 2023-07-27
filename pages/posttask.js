@@ -10,16 +10,17 @@ import  { useState} from "react";
 // import InfiniteScroll from "react-infinite-scroll-component";
 import PostCard from "@/components/PostCard";
 import PostTask from "@/components/PostTask";
+import Form from "@/components/Form";
 
 
 export default function Post({postsData,user}) {
 
-  const [posts, setPosts] = useState(postsData||[0,1,2,3]);
+  const [posts, setPosts] = useState(postsData||[]);
 
   const [hasMore, setHasMore] = useState(true);
   const [pageNumber, setPageNumber] = useState(2);
 
- 
+ let postTask =true
 //   const fetchDataOnScroll = async () => {
 //     try {
 //       const res = await axios.get(`${baseUrl}/api/task`, {
@@ -38,6 +39,7 @@ export default function Post({postsData,user}) {
   return (
     <div className="grid md:grid-cols-2 grid-cols-1 px-2 py-10 w-full justify-center items-center bg-gray-900 ">
 
+               <Form postTask={postTask} user={user}/>
      {/* <InfiniteScroll
   
           hasMore={hasMore}

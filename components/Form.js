@@ -2,10 +2,10 @@ import uploadPic from '@/utils/uploadPicToCloudinary';
 import React, { useState, useRef } from "react";
 import { submitNewTask } from "@/utils/postActions";
 let mediaPreview=[]
-function Form({name,task,status,index,time}) {
+function Form({name,task,status,index,time,postTask,user}) {
 
   const [category, setCategory] = useState();
-
+  const [posts, setPosts] = useState();
   const [link, setLink] = useState();
   const [images, setImgs] = useState(null);
   const [media, setMedia] = useState(null);
@@ -14,15 +14,62 @@ function Form({name,task,status,index,time}) {
   // const inputRef = useRef();
   const [error, setError] = useState(null);
 
-  // const handelSubmit = async (e) => 
-  // {
-  //   e.preventDefault();
+  const handelSubmit = async (e) => 
+  {
+    e.preventDefault();
+   setLoading(true)
+
+
+    picUrl = await  uploadPic(images)
+
+    data 
+    try {
+      if(postTask){
+      let  { data } =    await submitNewPost(picUrl,link,user. rookies,
+
+        user.traine,
+        user.elite,
    
-  //   picUrl = await  uploadPic(images)
+        user.core,
+   
+        user.dev)
+      
+      const createdPost = {
+        ...data,
+        user
+      };
+      setPosts(prev => [createdPost, ...prev]);
+      }else{
 
-  //   await submitNewTask(name,task,status,picUrl,index,time,link)
+     
+        await submitNewTask(name,task,status,picUrl,index,time,link,user. rookies,
 
-  // }
+          user.traine,
+          user.elite,
+     
+          user.core,
+     
+          user.dev)
+ }
+
+   
+
+      setLink('');
+
+     
+    } catch (error) {
+      toast.error(error);
+    }
+   if(images){
+    setImgs(null)
+    mediaPreview.length=0
+   }
+    setLoading(false);
+
+
+     
+  }
+ 
    const onchange = async (e) => 
     {
      setImgs(e.target.files);
@@ -38,8 +85,10 @@ for (let index = 0; index < e.target.files.length; index++) {
   return (
     <div>
 
-
-            <>
+ <form  className='w-full h-96'
+   onSubmit={handelSubmit}
+   >
+           
               <input
               multiple 
               name="image"
@@ -48,7 +97,7 @@ for (let index = 0; index < e.target.files.length; index++) {
               type="file"
               />
                 <h1 className="font-semibold text-lg">Image</h1>
-            </>
+          
             <div className='mt-4 cursor-pointer gap-2 w-4/5 flex sm:grid overflow-x-scroll grid-cols-2 md:grid-cols-3 p-2 bg-slate-800 rounded-lg m-auto'>       
             {mediaPreview.map((img,index)=>(
              
@@ -63,13 +112,11 @@ for (let index = 0; index < e.target.files.length; index++) {
              />))}
         </div>
           
-     
+     {postTask?<textarea type="text" name="name" value={link} onChange={(e) => setLink(e.target.value)}/>: <input className=" ml-7 mb-2" type="text" name="name" value={link} onChange={(e) => setLink(e.target.value)} />}
          
     
-   <form 
-  //  onSubmit={handelSubmit}
-   >
-   <input className=" ml-7 mb-2" type="text" name="name" value={link} onChange={(e) => setLink(e.target.value)} />
+  
+  
     
     <button>
       submit

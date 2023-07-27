@@ -1,8 +1,8 @@
 import React from 'react'
 import CardSlider from './CardSlider'
 
-function PostCard() {
-    let post ={
+function PostCard({post}) {
+    let posts ={
         name:"name",
         rookie:"rookie",
         elite:"elite",
@@ -10,14 +10,20 @@ function PostCard() {
         dev:"dev", 
         admin:"admin",
     }
-    let img=["https://www.planet.com/static/1fa65bb2083dc731d903d5e10072f3f8/2d264/mapping-hero%403x.jpg",
-              "https://cdn.tailgrids.com/2.0/image/application/images/cards/card-01/image-01.jpg",
-            "https://cdn.tailgrids.com/2.0/image/application/images/cards/card-01/image-01.jpg"  ]
+    let img=[post.a,post.b,post.c,post.d,post.e,post.f,post.g,post.h,post.i  ]
   return (
-    <div>
+   
         
-       <div className='flex flex-col bg-gray-800'>
-       <div className={"flex py-1 border-4 border-gray-100 rounded-tl-lg "}>
+       <div className='flex relative z-10 border-4 border-cyan-600 rounded-lg flex-col bg-gray-800'>
+          <div
+        
+        className="absolute -z-10 -left-0 -top-5 inset-0 rounded-lg   "
+      >
+        <div className=" h-5 blur-[5px]    bg-gradient-to-r  to-primary from-blue-400"></div>
+        {/* <div className="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-indigo-600"></div> */}
+      </div>
+       
+       <div className={"flex py-1 border-b rounded-tl-lg "}>
       <div className=" flex  px-2 ">
         <img
           className=" rounded-full z-0  w-28 h-16   m-0.5   "
@@ -28,24 +34,24 @@ function PostCard() {
         <div className="flex justify-between h-6  ">
         {/* <Link href={`#`}>  */}
         <a className=" p-1  rounded-sm  font-semibold ">
-            {post?.name ? post?.name : <>unknow</>}
-            {post?.rookie ? (
+            {posts?.name ? posts?.name : <>unknow</>}
+            {posts?.rookie ? (
               <span className=" p-1   text-xs font-semibold ">
                 rookies
                 {/* <Icon size="small" name="star" color="red" /> */}
                 |
               </span>
-            ) : post?.elite?(
+            ) : posts?.elite?(
 <></>
             //   <Icon size="small" name="star" color="yellow" />
-            ) : post?.core? (
+            ) : posts?.core? (
                 <></>
             //   <Icon size="small" name="star" color="blue" />
-            ) : post?.dev?(
+            ) : posts?.dev?(
 <></>
                 // <Icon size="small" name="star" color="purple" />
             
-            ):post?.admin&&<>
+            ):posts?.admin&&<>
            
            {/* <Icon size="small" name="star" color="teal" /> */}
             </>
@@ -67,7 +73,7 @@ function PostCard() {
         </div> 
 
 
-    </div>
+  
   )
 }
 

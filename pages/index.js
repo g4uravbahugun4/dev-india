@@ -1,14 +1,21 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import { useState } from 'react'
 import Mapping from '@/components/Mapping'
 import Growing from '@/components/Growing'
 import Cleaning from '@/components/Cleaning'
-import { RxDotFilled } from 'react-icons/rx';
+
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
+
+import Link from 'next/link'
+import Navbar from '@/components/Navbar'
+import { HiSwitchHorizontal } from "react-icons/hi";
 import { useState } from 'react'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
-const inter = Inter({ subsets: ['latin'] })
+import Post from '@/components/Post'
+
+import { FaHeart } from "react-icons/fa";
+import Donation from '@/components/Donation'
+
 
 export default function Home({user}) {
   const slides = [<Mapping />, <Growing />, <Cleaning />]
@@ -27,9 +34,12 @@ export default function Home({user}) {
     setCurrentIndex(newIndex);
   };
 
-
+  const[list,setList]=useState("task")
+ const[showForm,setShowForm]=useState(false);
+  const [showDonation, setShowDonation] = useState(false);
   return (
     <>
+    <div>
       <Navbar user={user}/>
       <div className='bg-gray-900 h-screen pt-28 '>
 
@@ -53,9 +63,20 @@ export default function Home({user}) {
           <Growing />
         </div>
 
-        <main className=' rounded-md p-3 mt-10'>
-          <h1 className='font-bold text-2xl text-white text-center tracking-wider '>TASK LIST:</h1>
+        <main className=' rounded-md p-3 mt-10 bg-[#ffffff2c]'>
+          
+        <div className='flex justify-center items-center'>          
+        <div onClick={() => { setList("task") }} className={`${list == 'task' ? 'font-bold text-3xl text-[#dcff2b]    text-center  p-3' :'font-semibold text-sm text-white text-center tracking-wider  hover:scale-110 transition-all  cursor-pointer p-3  hover:text-[#eeff97]'} `}>TASK LIST</div>
 
+        
+        
+        <HiSwitchHorizontal className='' size={50}/>
+        
+         <div onClick={() => { setList("project") }} className={`${list == 'project' ? 'font-bold text-3xl  text-[#dcff2b]  text-center  p-3' :'font-semibold text-sm text-white text-center tracking-wider hover:scale-110 transition-all group cursor-pointer p-3 hover:text-[#ebff89]'} `}>
+          PROJECT LIST</div>
+
+        </div>
+        
           <div className='flex  flex-wrap mt-3 '>
 
             <Link className='w-1/4 rounded-xl' href={{ pathname: '/tasks', query: { name: 'a' }, }}>
@@ -201,10 +222,44 @@ export default function Home({user}) {
 
             </Link>        
           </div>
+          </main>
 
-        </main>
+        {showForm && (
+          <div className="fixed inset-0 z-20 bg-black bg-opacity-75 flex justify-center items-center">
+            <div className="bg-white  rounded-md shadow-md" style={{  width:"50%" }}>
+              <Post setShowForm={setShowForm} />
+            </div>
+          </div>
+        )}  
 
+        {showDonation&&(
+            <div className="fixed inset-0 z-20 bg-black bg-opacity-75 flex justify-center items-center">            
+              <div className="bg-white  rounded-md shadow-md" style={{ width: "30%" }} >
+                <Donation setShowDonation={setShowDonation} />
+              </div>
+              </div>
+        )}
+
+        <div className='flex justify-end p-5'>
+          <div class="relative p-5 cursor-pointer   px-6 py-3 font-bold text-white rounded-lg group" onClick={()=>{setShowForm(true)}}>
+            <span class="absolute inset-0 w-full h-full transition duration-300 transform -translate-x-1 -translate-y-1 bg-purple-800 ease opacity-80 group-hover:translate-x-0 group-hover:translate-y-0"></span>
+            <span class="absolute inset-0 w-full h-full transition duration-300 transform translate-x-1 translate-y-1 bg-pink-800 ease opacity-80 group-hover:translate-x-0 group-hover:translate-y-0 mix-blend-screen"></span>
+            <span class="relative">Contribute Task</span>
+          </div>
+        </div>
+     
+ 
       </div>
+      </div>
+      <div onClick={()=>{setShowDonation(true)}} className="fixed top-1/2 right-0 transform -translate-y-1/2 w-24 h-16 bg-gradient-to-r from-red-500 to-pink-500 rounded-l-lg flex items-center justify-center text-white font-semibold text-sm shadow-lg cursor-pointer group transition-all ease-in-out hover:w-36">
+        <div className="w-0 h-0 border-r-12 border-t-12 border-transparent border-solid border-yellow-100 transform rotate-45 -mr-1"></div>
+        <span className="ml-3  ">Donate for a Cause</span>
+        <span className="group-hover:block hidden text-xs p-2">Become a Contributor</span>
+      </div>
+
+ 
+
+
     </>
   )
 }

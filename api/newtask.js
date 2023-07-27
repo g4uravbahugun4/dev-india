@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const authMiddleware = require("../middleware/authMiddleware");
 const UserModel = require("../models/UserModel");
+const NewtaskModel = require("../models/NewtaskModel");
 
 
 const uuid = require("uuid").v4;
@@ -18,12 +19,13 @@ router.post("/", authMiddleware, async (req, res) => {
   try {
     const newPost = {
       user: req.userId,
-      text
+      text,
+      picUrl
     };
    
-    if (picUrl) newPost.picUrl = picUrl;
+ 
 
-    const post = await new PostModel(newPost).save();
+    const post = await new NewtaskModel(newPost).save();
 
     return res.json(post);
   } catch (error) {
@@ -42,12 +44,12 @@ router.get("/", authMiddleware, async (req, res) => {
     const size = 8;
     const { userId } = req;
 
-    const loggedUser = await FollowerModel.findOne({ user: userId })
+
     let posts = [];
 
     if (number === 1) {
       
-        posts = await PostModel.find({ user: userId })
+        posts = await NewtaskModel.find({ user: userId })
           .limit(size)
           .sort({ createdAt: -1 })
         
@@ -59,7 +61,7 @@ router.get("/", authMiddleware, async (req, res) => {
       const skips = size * (number - 1);
 
       
-        posts = await PostModel.find({ user: userId })
+        posts = await NewtaskModel.find({ user: userId })
           .skip(skips)
           .limit(size)
           .sort({ createdAt: -1 })
@@ -74,25 +76,6 @@ router.get("/", authMiddleware, async (req, res) => {
   }
 });
 
-// GET POST BY ID
-
-router.get("/:userId", authMiddleware, async (req, res) => {
-  try {
-    const post = await PostModel.findById(req.params.userId)
-     
-
-    if (!post) {
-      return res.status(404).send("Post not found");
-    }
-
-    return res.json(post);
-  } catch (error) {
-    console.error(error);
-    return res.status(500).send(`Server error`);
-  }
-});
-
-// DELETE POST
 
 router.delete("/:postId", authMiddleware, async (req, res) => {
   try {
@@ -100,7 +83,7 @@ router.delete("/:postId", authMiddleware, async (req, res) => {
 
     const { postId } = req.params;
 
-    const post = await PostModel.findById(postId);
+    const post = await NewtaskModel.findById(postId);
     if (!post) {
       return res.status(404).send("post not found");
     }
@@ -133,7 +116,7 @@ router.post("/like/:postId", authMiddleware, async (req, res) => {
     const { postId } = req.params;
     const { userId } = req;
 
-    const post = await PostModel.findById(postId);
+    const post = await NewtaskModel.findById(postId);
     if (!post) {
       return res.status(404).send("No Post found");
     }
@@ -162,7 +145,7 @@ router.put("/unlike/:postId", authMiddleware, async (req, res) => {
     const { postId } = req.params;
     const { userId } = req;
 
-    const post = await PostModel.findById(postId);
+    const post = await NewtaskModel.findById(postId);
     if (!post) {
       return res.status(404).send("No Post found");
     }
@@ -187,3 +170,7 @@ router.put("/unlike/:postId", authMiddleware, async (req, res) => {
     return res.status(500).send(`Server error`);
   }
 });
+
+
+
+module.exports = router;
