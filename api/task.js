@@ -6,7 +6,14 @@ const authMiddleware = require("../middleware/authMiddleware");
 
 router.post("/", authMiddleware, async (req, res) => {
      const { userId } = req; 
-     const {name,task,status,img,index,time}=req.body
+     const {name,task,status,img,index,time,
+      rookies,
+      traine,
+      elite,
+      core,
+      dev,
+      userpicUrl
+    }=req.body
   try {
  let user
 
@@ -18,7 +25,7 @@ user.some(status=> status.status === "complete"&&status.index===index);
 if(exists){
   return res.status(401).send(" data already exist");
 }
-if(Date.now()<time){
+if(Date.now()<time||exists){
 
   user = await TaskModel.findOne({user:userId})
   const exists =

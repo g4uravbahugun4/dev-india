@@ -10,7 +10,7 @@ function Form({name,task,status,index,time,postTask,user,setPosts}) {
   const [link, setLink] = useState();
   const [images, setImgs] = useState(null);
   const [media, setMedia] = useState(null);
-  const [type, setType] = useState(null);
+  const [taskname, setName] = useState("");
   const [loading, setLoading] = useState(false);
 
   // const inputRef = useRef();
@@ -40,7 +40,9 @@ function Form({name,task,status,index,time,postTask,user,setPosts}) {
    
         user.core,
    
-        user.dev)
+        user.dev,
+        user.userimg,
+        taskname)
       
       const createdPost = {
         ...data,
@@ -57,13 +59,15 @@ function Form({name,task,status,index,time,postTask,user,setPosts}) {
      
           user.core,
      
-          user.dev)
+          user.dev,
+          user.userimg)
  }
 
    
 
       setLink('');
 
+      setName('');
      
     } catch (error) {
       toast.error(error);
@@ -91,22 +95,23 @@ for (let index = 0; index < e.target.files.length; index++) {
     };
  
   return (
-    <div>
+    <div className='p-10'>
 
- <form  className='w-full h-96'
+ <form  className='w-full bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-purple-950 via-violet-900 to-purple-950 rounded-lg p-10 flex flex-col  justify-center items-center   '
    onSubmit={handelSubmit}
    >
+    <h1 className=" flex w-full font-semibold text-lg">Images</h1>
            
               <input
               multiple 
               name="image"
               onChange={onchange}
-             
+             className='mt-1'
               type="file"
               />
-                <h1 className="font-semibold text-lg">Image</h1>
-          
-            <div className='mt-4 cursor-pointer gap-2 w-4/5 flex sm:grid overflow-x-scroll grid-cols-2 md:grid-cols-3 p-2 bg-slate-800 rounded-lg m-auto'>       
+                
+          <h1 className="flex w-full font-semibold text-lg mt-4 ">Preview</h1>
+            <div className='cursor-pointer gap-2 w-4/5 flex sm:grid overflow-x-scroll grid-cols-2 md:grid-cols-3 p-2 bg-slate-800 rounded-lg m-auto'>       
             {mediaPreview.map((img,index)=>(
              
              <img
@@ -119,14 +124,25 @@ for (let index = 0; index < e.target.files.length; index++) {
                size="medium"
              />))}
         </div>
-          
-     {postTask?<textarea type="text" name="name" value={link} onChange={(e) => setLink(e.target.value)}/>: <input className=" ml-7 mb-2" type="text" name="name" value={link} onChange={(e) => setLink(e.target.value)} />}
-         
-    
+          <h1 className='flex w-full mt-3 font-semibold text-lg'>{postTask?<>Content</>:<>Link</>}</h1>
+     {postTask?<textarea className='w-full rounded-lg text-black font-serif p-5 mt-1' type="text" name="name" value={link} onChange={(e) => setLink(e.target.value)}/>: <input className=" ml-7 p-2 mb-2 rounded-lg text-black w-1/2" type="text" name="name" value={link} onChange={(e) => setLink(e.target.value)} />}
+         <h1 className='flex w-full font-semibold text-lg'>
+          TaskName
+         </h1>
+     {postTask&&<input
+             
+              name="taskname"
+              value={taskname} 
+              onChange={(e) => setName(e.target.value)}
+             className=' mt-3 p-2 mb-2 rounded-lg text-black w-1/2'
+              type="text"
+              />}
   
   
     
-    <button>
+    <button
+    disabled={loading}
+    className={`shadow-inner shadow-black w-24 bg-gradient-to-br hover:shadow-white rounded-lg from-blue-500 to-transparent hover:bg-primary h-8 mt-5`}>
       submit
     </button>
     </form>

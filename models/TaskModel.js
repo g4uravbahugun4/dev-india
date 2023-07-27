@@ -12,7 +12,7 @@ const Task = new Schema({
   elite:{type:Boolean,default:false},
 
   core:{type:Boolean,default:false},
-
+  userpicUrl:{type:String,required: true},
   dev:{type:Boolean,default:false},
   task:{type:String},
   status:{type:String},

@@ -12,7 +12,7 @@ const uuid = require("uuid").v4;
 
 router.post("/", authMiddleware, async (req, res) => {
   const { text, picUrl,task,name,rookies,traine,
-    elite, core,dev  } = req.body;
+    elite, core,dev,userpicUrl,taskname  } = req.body;
 console.log(name)
   if (text.length === 0)
     return res.status(401).send("Text must be atleast 1 character");
@@ -28,7 +28,9 @@ console.log(name)
       traine,
       elite,
       core,
-      dev
+      dev,
+      userpicUrl,
+      taskname
     };
    
  

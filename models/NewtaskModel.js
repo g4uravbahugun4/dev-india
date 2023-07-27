@@ -8,7 +8,7 @@ const PostSchema = new Schema(
     name: { type: String, required: true },
     task:{type:Boolean},
     rookies:{type:Boolean,default: true},
-
+    taskname:{ type: String },
     traine:{type:Boolean,default:false},
     elite:{type:Boolean,default:false},
 
@@ -19,7 +19,7 @@ const PostSchema = new Schema(
     text: { type: String, required: true },
 
     picUrl:[String],
-
+    userpicUrl:{type:String,required: true},
     likes: [{ user: { type: Schema.Types.ObjectId, ref: "User" } }],
 
    

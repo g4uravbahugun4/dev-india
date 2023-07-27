@@ -19,7 +19,7 @@ const toastError = error => toast.error(catchErrors(error));
 
 export const submitNewTask = async (
   name,task,status,img,index,time, rookies,
- traine, elite, core, dev
+ traine, elite, core, dev,userpicUrl
 ) => {
   try {
      await Axios.post("/", { name,task,status,img,index,time,
@@ -30,7 +30,7 @@ export const submitNewTask = async (
     
       core,
     
-      dev });
+      dev ,userpicUrl});
 
     // const newPost = {
     //   ...res.data,
@@ -51,11 +51,12 @@ export const submitNewTask = async (
 
 export const submitNewPost = async ( 
   picUrl,text,task,name,rookies,traine,
-  elite, core,dev
+  elite, core,dev,userpicUrl,taskname
+
   ) => {
   try {
     const { data } = await Axios2.post("/", { picUrl,text,task,name,rookies,traine,
-      elite, core,dev });
+      elite, core,dev,userpicUrl,taskname });
 
     return { data };
   } catch (error) {

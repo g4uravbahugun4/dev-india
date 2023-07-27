@@ -37,9 +37,12 @@ export default function Post({postsData,user}) {
 //     }
 //   };
   return (
-    <div className="grid md:grid-cols-2 grid-cols-1 px-2 py-10 w-full justify-center items-center bg-gray-900 ">
+    <div className="bg-gray-900"
+    >
+       <Form postTask={postTask} user={user} setPosts={setPosts} task={true}/>
+    <div className="grid md:grid-cols-2 grid-cols-1 px-2 py-10 w-full justify-center items-center  ">
 
-               <Form postTask={postTask} user={user} setPosts={setPosts} task={true}/>
+              
      {/* <InfiniteScroll
   
           hasMore={hasMore}
@@ -49,13 +52,14 @@ export default function Post({postsData,user}) {
           dataLength={posts.length}> */}
    {posts?.map(post => (
     <div className="w-full px-5 py-5  ">
-       <PostTask post={post}/>
+       <PostTask post={post} user={user}/>
       </div>  
 
             ))}
    
 {/* </InfiniteScroll> */}
 
+  </div>
   </div>
   )
 }

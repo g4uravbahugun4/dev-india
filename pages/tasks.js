@@ -12,9 +12,9 @@ function Tasks({user}) {
   <>
  
   
-{name==='a'&&<Task1 user={user}/>}
-{name==='b'&&<Task2/>}
-{name==='c'&&<Task3/>}
+{name==='0'&&<Task1 user={user}/>}
+{name==='1'&&<Task2 user={user}/>}
+{name==='2'&&<Task3 user={user}/>}
   
   </>
   )
