@@ -1,11 +1,11 @@
 
 import  { useState} from "react";
 
-// import axios from "axios";
-// import baseUrl from "../utils/baseUrl";
+import axios from "axios";
+import baseUrl from "../utils/baseUrl";
 
-// import cookie from "js-cookie";
-// import { parseCookies } from "nookies";
+import cookie from "js-cookie";
+import { parseCookies } from "nookies";
 
 // import InfiniteScroll from "react-infinite-scroll-component";
 import PostCard from "@/components/PostCard";
@@ -39,7 +39,7 @@ export default function Post({postsData,user}) {
   return (
     <div className="grid md:grid-cols-2 grid-cols-1 px-2 py-10 w-full justify-center items-center bg-gray-900 ">
 
-               <Form postTask={postTask} user={user}/>
+               <Form postTask={postTask} user={user} setPosts={setPosts} task={true}/>
      {/* <InfiniteScroll
   
           hasMore={hasMore}
@@ -49,7 +49,7 @@ export default function Post({postsData,user}) {
           dataLength={posts.length}> */}
    {posts?.map(post => (
     <div className="w-full px-5 py-5  ">
-       <PostTask/>
+       <PostTask post={post}/>
       </div>  
 
             ))}
@@ -60,18 +60,18 @@ export default function Post({postsData,user}) {
   )
 }
 
-// export const getServerSideProps = async ctx => {
-//   try {
+export const getServerSideProps = async ctx => {
+  try {
    
-//     const { token } = parseCookies(ctx);
-//     const res = await axios.get(`${baseUrl}/api/task`, {
-//       headers: { Authorization: token },
-//       params: { pageNumber: 1 }
+    const { token } = parseCookies(ctx);
+    const res = await axios.get(`${baseUrl}/api/newtask`, {
+      headers: { Authorization: token },
+      params: { pageNumber: 1 }
       
-//     });
+    });
 
-//     return { props: { postsData: res.data } };
-//   } catch (error) {
-//     return { props: { errorLoading: true } };
-//   }
-// };
+    return { props: { postsData: res.data } };
+  } catch (error) {
+    return { props: { errorLoading: true } };
+  }
+};

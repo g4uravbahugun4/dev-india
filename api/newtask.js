@@ -11,8 +11,9 @@ const uuid = require("uuid").v4;
 // CREATE A POST
 
 router.post("/", authMiddleware, async (req, res) => {
-  const { text, picUrl } = req.body;
-
+  const { text, picUrl,task,name,rookies,traine,
+    elite, core,dev  } = req.body;
+console.log(name)
   if (text.length === 0)
     return res.status(401).send("Text must be atleast 1 character");
 
@@ -20,7 +21,14 @@ router.post("/", authMiddleware, async (req, res) => {
     const newPost = {
       user: req.userId,
       text,
-      picUrl
+      picUrl,
+      task,
+      name,
+      rookies,
+      traine,
+      elite,
+      core,
+      dev
     };
    
  
@@ -42,14 +50,14 @@ router.get("/", authMiddleware, async (req, res) => {
   try {
     const number = Number(pageNumber);
     const size = 8;
-    const { userId } = req;
+   
 
 
     let posts = [];
 
     if (number === 1) {
       
-        posts = await NewtaskModel.find({ user: userId })
+        posts = await NewtaskModel.find()
           .limit(size)
           .sort({ createdAt: -1 })
         
@@ -61,7 +69,7 @@ router.get("/", authMiddleware, async (req, res) => {
       const skips = size * (number - 1);
 
       
-        posts = await NewtaskModel.find({ user: userId })
+        posts = await NewtaskModel.find()
           .skip(skips)
           .limit(size)
           .sort({ createdAt: -1 })

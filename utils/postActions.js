@@ -22,7 +22,7 @@ export const submitNewTask = async (
  traine, elite, core, dev
 ) => {
   try {
-    const res = await Axios.post("/", { name,task,status,img,index,time,
+     await Axios.post("/", { name,task,status,img,index,time,
       rookies,
 
       traine,
@@ -50,11 +50,11 @@ export const submitNewTask = async (
 
 
 export const submitNewPost = async ( 
-  picUrl,text,rookies,traine,
+  picUrl,text,task,name,rookies,traine,
   elite, core,dev
   ) => {
   try {
-    const { data } = await Axios2.post("/", { picUrl,text,rookies,traine,
+    const { data } = await Axios2.post("/", { picUrl,text,task,name,rookies,traine,
       elite, core,dev });
 
     return { data };

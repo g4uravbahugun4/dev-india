@@ -14,7 +14,7 @@ MyApp.getInitialProps = async ({ Component, ctx }) => {
     ctx.pathname === "/" ||
     ctx.pathname === "/mapping" ||
     ctx.pathname === "/tasks"||
-    ctx.pathname === "/post"||
+    ctx.pathname === "/posts"||
     ctx.pathname === "/hello"||
     ctx.pathname === "/donation"||
     ctx.pathname === "/posttask" ;

@@ -1,14 +1,16 @@
 import uploadPic from '@/utils/uploadPicToCloudinary';
 import React, { useState, useRef } from "react";
-import { submitNewTask } from "@/utils/postActions";
+import { submitNewTask,submitNewPost } from "@/utils/postActions";
+import { toast } from "react-toastify";
 let mediaPreview=[]
-function Form({name,task,status,index,time,postTask,user}) {
+function Form({name,task,status,index,time,postTask,user,setPosts}) {
 
   const [category, setCategory] = useState();
-  const [posts, setPosts] = useState();
+
   const [link, setLink] = useState();
   const [images, setImgs] = useState(null);
   const [media, setMedia] = useState(null);
+  const [type, setType] = useState(null);
   const [loading, setLoading] = useState(false);
 
   // const inputRef = useRef();
@@ -19,13 +21,19 @@ function Form({name,task,status,index,time,postTask,user}) {
     e.preventDefault();
    setLoading(true)
 
+   let picUrl;
 
-    picUrl = await  uploadPic(images)
-
-    data 
+   if (images) {
+     picUrl = await uploadPic(images);
+     if (!picUrl) {
+       setLoading(false);
+       return toast.error("Error Uploading Image");
+     }
+   }
+    console.log(picUrl)
     try {
       if(postTask){
-      let  { data } =    await submitNewPost(picUrl,link,user. rookies,
+      let  { data } =    await submitNewPost(picUrl,link,task,user.name,user.rookies,
 
         user.traine,
         user.elite,
@@ -42,7 +50,7 @@ function Form({name,task,status,index,time,postTask,user}) {
       }else{
 
      
-        await submitNewTask(name,task,status,picUrl,index,time,link,user. rookies,
+        await submitNewTask(user.name,task,status,picUrl,index,time,link,user. rookies,
 
           user.traine,
           user.elite,

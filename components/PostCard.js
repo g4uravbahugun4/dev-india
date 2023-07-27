@@ -2,14 +2,7 @@ import React from 'react'
 import CardSlider from './CardSlider'
 
 function PostCard({post}) {
-    let posts ={
-        name:"name",
-        rookie:"rookie",
-        elite:"elite",
-        core:"core",
-        dev:"dev", 
-        admin:"admin",
-    }
+ 
     let img=[post.a,post.b,post.c,post.d,post.e,post.f,post.g,post.h,post.i  ]
   return (
    
@@ -34,24 +27,24 @@ function PostCard({post}) {
         <div className="flex justify-between h-6  ">
         {/* <Link href={`#`}>  */}
         <a className=" p-1  rounded-sm  font-semibold ">
-            {posts?.name ? posts?.name : <>unknow</>}
-            {posts?.rookie ? (
+            {post?.name ? post?.name : <>unknow</>}
+            {post?.rookie ? (
               <span className=" p-1   text-xs font-semibold ">
                 rookies
                 {/* <Icon size="small" name="star" color="red" /> */}
                 |
               </span>
-            ) : posts?.elite?(
+            ) : post?.elite?(
 <></>
             //   <Icon size="small" name="star" color="yellow" />
-            ) : posts?.core? (
+            ) : post?.core? (
                 <></>
             //   <Icon size="small" name="star" color="blue" />
-            ) : posts?.dev?(
+            ) : post?.dev?(
 <></>
                 // <Icon size="small" name="star" color="purple" />
             
-            ):posts?.admin&&<>
+            ):post?.admin&&<>
            
            {/* <Icon size="small" name="star" color="teal" /> */}
             </>

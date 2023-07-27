@@ -1,15 +1,15 @@
 import React from 'react'
 
+import { useState } from "react";
+import { likePost } from "../utils/postActions";
 
-function PostTask() {
-    let post ={
-        name:"name",
-        rookie:"rookie",
-        elite:"elite",
-        core:"core",
-        dev:"dev", 
-        admin:"admin",
-    }
+function PostTask({post}) {
+  const [likes, setLikes] = useState(post.likes);
+  const isLiked = likes.some(like => like.user === user._id);
+
+  // onClick={() =>
+  //   likePost(product._id, posts.user._id, user._id, setLikes, isLiked ? false : true)
+  // }
     let img=["https://www.planet.com/static/1fa65bb2083dc731d903d5e10072f3f8/2d264/mapping-hero%403x.jpg",
               "https://cdn.tailgrids.com/2.0/image/application/images/cards/card-01/image-01.jpg",
             "https://cdn.tailgrids.com/2.0/image/application/images/cards/card-01/image-01.jpg"  ]

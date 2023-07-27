@@ -8,9 +8,7 @@ import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import { HiSwitchHorizontal } from "react-icons/hi";
-import { useState } from 'react'
-import Link from 'next/link'
-import Navbar from '@/components/Navbar'
+
 import Post from '@/components/Post'
 
 import { FaHeart } from "react-icons/fa";
