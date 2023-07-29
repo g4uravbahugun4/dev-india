@@ -1,23 +1,24 @@
 import React from 'react'
 
 import { useState } from "react";
-import { likePost } from "../utils/postActions";
+import { likePost,deletePost} from "../utils/postActions";
 
-function PostTask({post,user}) {
+function PostTask({post,user,setPosts}) {
   const [likes, setLikes] = useState(post.likes);
   const isLiked = likes.some(like => like.user === user._id);
 
    
   return (
-   
+    
         
-       <div className='flex flex-col z-10 border-4 rounded-lg  0 relative bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-blue-900 via-gray-200 to-blue-900'>
-          <div onClick={() => likePost( post._id, user._id, setLikes, isLiked ? false : true)} className={`absolute right-5 flex justify-center shadow-inner shadow-black ${isLiked?"bg-gradient-to-tr shadow-white from-transparent to-blue-900":"bg-transparent "} cursor-pointer top-3 h-8 rounded-lg w-20 `}>{isLiked?<>voted {likes.length}</>:<>vote {likes.length}</>}</div>
+       <div className={`flex flex-col z-10 border-4 rounded-lg  0 relative bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] ${post.task==="task"?"from-gray-900 via-gray-100 to-gray-900":"from-yellow-700 via-amber-100 to-yellow-700"}`}>
+          <div onClick={() => likePost( post._id, user._id, setLikes, isLiked ? false : true)} className={`absolute right-5 flex justify-center shadow-inner shadow-black ${post.task==="task"?isLiked?"bg-gradient-to-tr shadow-white from-transparent to-blue-900":"bg-transparent ":isLiked?"bg-gradient-to-tr shadow-white from-transparent to-rose-400":"bg-transparent "} cursor-pointer top-3 h-8 rounded-lg w-20 `}>{isLiked?<>voted {likes.length}</>:<>vote {likes.length}</>}</div>
+         <div  className='absolute -right-0 -top-7 cursor-pointer' onClick={() => deletePost(post._id, setPosts)}> delete</div> 
        <div
         
         className="absolute -z-10 -left-0  -top-5 inset-0   "
       >
-        <div className=" h-5 blur-[5px]    bg-gradient-to-r  to-gray-500 from-white"></div>
+        <div className={` h-5 blur-[5px]    bg-gradient-to-r ${post.task==="task"? "to-gray-500 from-white":"to-yellow-200 from-amber-100"}`}></div>
         {/* <div className="blur-[106px] opacity-30 h-32 bg-gradient-to-r from-cyan-400 to-indigo-600"></div> */}
       
       </div>
@@ -75,7 +76,7 @@ function PostTask({post,user}) {
          
         </div>
         <div className=" flex flex-wrap py-2  text-gray-900  break-normal justify-center font-extrabold  items-center ">
-          <p className="break-all font-bold text-xl ">Task - <font className="font-medium text-base">{post.taskname?post.taskname:"unknown"}</font></p>
+          <p className="break-all font-bold text-xl ">{post.task==="task"?"Task":"Project"} - <font className="font-medium text-base">{post.taskname?post.taskname:"unknown"}</font></p>
         </div>
         
       </div>

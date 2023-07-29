@@ -6,7 +6,7 @@ const PostSchema = new Schema(
     user: { type: Schema.Types.ObjectId, ref: "User" },
 
     name: { type: String, required: true },
-    task:{type:Boolean},
+    task:{type: String, required: true },
     rookies:{type:Boolean,default: true},
     taskname:{ type: String },
     traine:{type:Boolean,default:false},

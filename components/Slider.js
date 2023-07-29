@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import Card from './Card'
 import Track from './Track'
+import { useHorizontalScroll }  from "./SideScrole";
 function Slider({slides,current,setCurrent,setImg}) {
-
+  const scrollRef = useHorizontalScroll();
    const[selected,setSelected]=useState(current)
   return (
    <>
-   <div className='w-full relative overflow-x-scroll '>
+   <div ref={scrollRef} className='w-full relative overflow-x-scroll  '>
     {/* <Track current={current}> */}
     <ul className='flex  relative list-none  md:mr-40 md:w-auto  md:p-10 p-5 w-3/4'>
      

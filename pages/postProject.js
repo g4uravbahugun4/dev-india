@@ -1,4 +1,3 @@
-
 import  { useState} from "react";
 
 import axios from "axios";
@@ -39,7 +38,7 @@ export default function Post({postsData,user}) {
   return (
     <div className="bg-gray-900"
     >
-       <Form postTask={postTask} user={user} setPosts={setPosts} task={"task"}/>
+       <Form postTask={postTask} user={user} setPosts={setPosts} task={"project"}/>
     <div className="grid md:grid-cols-2 grid-cols-1 px-2 py-10 w-full justify-center items-center  ">
 
               
@@ -52,7 +51,7 @@ export default function Post({postsData,user}) {
           dataLength={posts.length}> */}
    {posts?.map(post => (
     <div className="w-full px-5 py-5  ">
-       <PostTask post={post} setPosts={ setPosts} user={user}/>
+       <PostTask post={post} user={user}/>
       </div>  
 
             ))}
@@ -68,7 +67,7 @@ export const getServerSideProps = async ctx => {
   try {
    
     const { token } = parseCookies(ctx);
-    const res = await axios.get(`${baseUrl}/api/newtask/task`, {
+    const res = await axios.get(`${baseUrl}/api/newtask/project`, {
       headers: { Authorization: token },
       params: { pageNumber: 1 }
       
