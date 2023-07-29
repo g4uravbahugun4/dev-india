@@ -13,7 +13,7 @@ const uuid = require("uuid").v4;
 router.post("/", authMiddleware, async (req, res) => {
   const { text, picUrl,task,name,rookies,traine,
     elite, core,dev,userpicUrl,taskname  } = req.body;
-console.log(name)
+
   if (text.length === 0)
     return res.status(401).send("Text must be atleast 1 character");
 
@@ -46,9 +46,10 @@ console.log(name)
 
 // GET ALL POSTS
 
-router.get("/", authMiddleware, async (req, res) => {
+router.get("/:type", authMiddleware, async (req, res) => {
   const { pageNumber } = req.query;
-
+   const {type} =req.params
+   console.log(type)
   try {
     const number = Number(pageNumber);
     const size = 8;
@@ -59,7 +60,7 @@ router.get("/", authMiddleware, async (req, res) => {
 
     if (number === 1) {
       
-        posts = await NewtaskModel.find()
+        posts = await NewtaskModel.find({task:type})
           .limit(size)
           .sort({ createdAt: -1 })
         
@@ -71,7 +72,7 @@ router.get("/", authMiddleware, async (req, res) => {
       const skips = size * (number - 1);
 
       
-        posts = await NewtaskModel.find()
+        posts = await NewtaskModel.find({task:type})
           .skip(skips)
           .limit(size)
           .sort({ createdAt: -1 })
@@ -99,7 +100,7 @@ router.delete("/:postId", authMiddleware, async (req, res) => {
     }
 
     const deletePost = async () => {
-      await post.remove();
+      await post.deleteOne();
       return res.status(200).send("Post deleted Successfully");
     };
 

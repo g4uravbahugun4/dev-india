@@ -17,7 +17,7 @@ function Card({index,setImg,img}) {
                   <div className="p-2 text-center sm:p-9 ">
                   
                     <p className="text-black font-bold sm:text-xl text-sm mb-2 ">
-                     Task{index}
+                     Task-{index}
                     </p>
                     <button onClick={()=>setImg(index)}
                       
