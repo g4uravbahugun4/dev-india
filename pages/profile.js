@@ -21,9 +21,9 @@ const profile = ({user}) => {
               </div>
             </div>
             <div className="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center text-center">
-              {/* <div className="py-6 px-3 mt-2 sm:mt-0">
+              <div className="py-6 px-3 mt-2 sm:mt-0">
                 <button className="bg-primary active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150" type="button">
-                  completed
+                  Rank
                 </button>
                 <button className="bg-primary active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150 mx-2 sm:mx-0" type="button">
                   pending
@@ -31,7 +31,7 @@ const profile = ({user}) => {
                 <button className="bg-primary active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150" type="button">
                   ratings
                 </button>
-              </div> */}
+              </div>
             </div>
             <div className="w-full lg:w-4/12 px-4 lg:order-1">
               {/* <div className="flex justify-center py-4 lg:pt-4 pt-8">
@@ -70,6 +70,64 @@ const profile = ({user}) => {
         
         </div>
       </div>
+
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg flex items-center justify-center">
+    <table class="w-4/6 text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
+                     Username
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    RAnks
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="border-b border-gray-200 dark:border-gray-700">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+                    Kamal
+                </th>
+                <td class="px-6 py-4">
+                    1
+                </td>
+            </tr>
+            <tr class="border-b border-gray-200 dark:border-gray-700">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+                    Anshul
+                </th>
+                <td class="px-6 py-4">
+                    2
+                </td>
+            </tr>
+            <tr class="border-b border-gray-200 dark:border-gray-700">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+                    Gaurav
+                </th>
+                <td class="px-6 py-4">
+                    3
+                </td>
+            </tr>
+            <tr class="border-b border-gray-200 dark:border-gray-700">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+                  Rahul
+                </th>
+                <td class="px-6 py-4">
+                    4
+                </td>
+            </tr>
+            <tr>
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+                    Pankaj
+                </th>
+                <td class="px-6 py-4">
+                    5
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
     </div>
    
   </section>

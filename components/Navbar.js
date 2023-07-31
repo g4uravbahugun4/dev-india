@@ -1,18 +1,18 @@
 import React, { useRef, useEffect, useState } from "react";
 import { GoogleLogin } from "@react-oauth/google";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { loginUser, logoutUser } from "../utils/authUser";
 import Link from "next/link";
+import Image from "next/image";
 
-function Navbar({user}) {
+function Navbar({ user }) {
   const notify = (data) => toast(data);
   const handelSubmit = async (credentialResponse) => {
-    let data="loged in"
-    notify(data)
+    let data = "loged in";
+    notify(data);
 
     let user = {
-      
       client_id: credentialResponse.clientId,
       jwtToken: credentialResponse.credential,
     };
@@ -38,13 +38,18 @@ function Navbar({user}) {
                 className="flex space-x-2 items-center"
               >
                 <div aria-hidden="true" className="flex space-x-1">
-                  <div className="h-4 w-4 rounded-full bg-gray-900 dark:bg-white"></div>
-                  <div className="h-6 w-2 bg-primary"></div>
+                <Image
+                        src="/images/clients/logo.svg"
+                        className="w-8"
+                        width={100}
+                        height={100}
+                        alt="logo illustration"
+                      />
                 </div>
                 <span className="text-2xl font-bold text-gray-900 dark:text-white">
                   {`Let's Dev India`}
                 </span>
-             </Link>
+              </Link>
 
               <div className="relative flex items-center lg:hidden max-h-10">
                 <label
@@ -84,46 +89,63 @@ function Navbar({user}) {
                       href="/posttask"
                       className="block md:px-4 transition hover:text-primary"
                     >
-                      <span>Tasks</span>
-                   </Link>
+                       <Image
+                        src="/images/clients/task.svg"
+                        className="w-6"
+                        width={100}
+                        height={100}
+                        alt="impact illustration"
+                      />
+                    </Link>
                   </li>
                   <li>
                     <Link
                       href="postProject"
                       className="block md:px-4 transition hover:text-primary"
                     >
-                      <span>Project</span>
-                   </Link>
+                      <Image
+                        src="/images/clients/project.svg"
+                        className="w-6"
+                        width={100}
+                        height={100}
+                        alt="impact illustration"
+                      />
+                    </Link>
                   </li>
-                 {user ? 
-                   <li>
-                   <Link
-                     href="/profile"
-                     className="block md:px-4 transition hover:text-primary"
-                   >
-                     <img src="images/user.svg" alt="profile" />
-                   </Link>
-                 </li> : null
-                 }
+                  {user ? (
+                    <li>
+                      <Link
+                        href="/profile"
+                        className="block md:px-4 transition hover:text-primary"
+                      >
+                        <img src="images/user.svg" alt="profile" />
+                      </Link>
+                    </li>
+                  ) : null}
                   <li>
-                  <ToastContainer />
-                  {!user ? (
-              <GoogleLogin
-                onSuccess={(credentialResponse) => {
-                  handelSubmit(credentialResponse);
-                }}
-                useOneTap
-                type="icon"
-                shape="circle"
-                onError={() => {
-                  let data="can't log in"
-                  notify(data)
-                }}
-              />
-             
-            ) : <div>
-              <img src="/images/logoutL.svg" alt="logout" />
-            </div>}
+                    <ToastContainer />
+                    {!user ? (
+                      <GoogleLogin
+                        onSuccess={(credentialResponse) => {
+                          handelSubmit(credentialResponse);
+                        }}
+                        useOneTap
+                        type="icon"
+                        shape="circle"
+                        onError={() => {
+                          let data = "can't log in";
+                          notify(data);
+                        }}
+                      />
+                    ) : (
+                      <div>
+                        <img
+                          onClick={logoutUser}
+                          src="/images/logoutL.svg"
+                          alt="logout"
+                        />
+                      </div>
+                    )}
                   </li>
                 </ul>
               </div>
@@ -136,7 +158,7 @@ function Navbar({user}) {
                   <span className="relative text-sm font-semibold text-white">
                     Donate
                   </span>
-               </Link>
+                </Link>
               </div>
             </div>
           </div>
