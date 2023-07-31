@@ -51,7 +51,7 @@ export default function Post({postsData,user}) {
           dataLength={posts.length}> */}
    {posts?.map(post => (
     <div className="w-full px-5 py-5  ">
-       <PostTask post={post} user={user}/>
+       <PostTask post={post} setPosts={ setPosts}  user={user}/>
       </div>  
 
             ))}
