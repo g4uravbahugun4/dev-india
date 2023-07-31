@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 const CallToAction = () => {
   return (
-    <div className="relative pt-6 pb-48">
+    <div className="relative py-6">
       <div
         aria-hidden="true"
         className="absolute inset-0 h-max w-full m-auto grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20"

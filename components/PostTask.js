@@ -13,7 +13,7 @@ function PostTask({post,user,setPosts}) {
         
        <div className={`flex flex-col z-10 border-4 rounded-lg  0 relative bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] ${post.task==="task"?"from-gray-900 via-gray-100 to-gray-900":"from-yellow-700 via-amber-100 to-yellow-700"}`}>
           <div onClick={() => likePost( post._id, user._id, setLikes, isLiked ? false : true)} className={`absolute right-5 flex justify-center shadow-inner shadow-black ${post.task==="task"?isLiked?"bg-gradient-to-tr shadow-white from-transparent to-blue-900":"bg-transparent ":isLiked?"bg-gradient-to-tr shadow-white from-transparent to-rose-400":"bg-transparent "} cursor-pointer top-3 h-8 rounded-lg w-20 `}>{isLiked?<>voted {likes.length}</>:<>vote {likes.length}</>}</div>
-         <div  className='absolute -right-0 -top-7 cursor-pointer' onClick={() => deletePost(post._id, setPosts)}> delete</div> 
+         <div  className='bg-red-400 active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-2 py-1 rounded-full outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150 absolute -right-1 -top-7 cursor-pointer' onClick={() => deletePost(post._id, setPosts)}> x</div> 
        <div
         
         className="absolute -z-10 -left-0  -top-5 inset-0   "

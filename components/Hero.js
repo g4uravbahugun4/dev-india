@@ -48,8 +48,17 @@ const Hero = () => {
               </a>
             </div>
             <div className="hidden py-8 mt-16 border-y border-gray-100 dark:border-gray-800 sm:flex justify-between">
-              <div className="text-left">
-                <h6 className="text-lg font-semibold text-gray-700 dark:text-white">
+              <div className="text-center">
+              <div className="flex items-center justify-center pb-4">
+              <Image
+            src="/images/clients/impact.png"
+            className="w-12"
+            width={100}
+            height={100}
+            alt="impact illustration"
+          />
+          </div>
+                <h6 className="text-center text-lg font-semibold text-gray-700 dark:text-white">
                   Impact stories
                 </h6>
                 <p className="text-sm mt-2 text-gray-500">
@@ -57,8 +66,17 @@ const Hero = () => {
                   stories from those who serve.
                 </p>
               </div>
-              <div className="text-left">
-                <h6 className="text-lg font-semibold text-gray-700 dark:text-white">
+              <div className="text-center">
+              <div className="flex items-center justify-center pb-4">
+              <Image
+            src="/images/clients/donation.png"
+            className="w-12"
+            width={100}
+            height={100}
+            alt="donation illustration"
+          />
+          </div>
+                <h6 className="text-center text-lg font-semibold text-gray-700 dark:text-white">
                   Donation options
                 </h6>
                 <p className="text-sm mt-2 text-gray-500">
@@ -66,8 +84,17 @@ const Hero = () => {
                   donation today. Choose a specific cause to support.
                 </p>
               </div>
-              <div className="text-left">
-                <h6 className="text-lg font-semibold text-gray-700 dark:text-white">
+              <div className="text-center">
+              <div className="flex items-center justify-center pb-4">
+              <Image
+            src="/images/clients/volunteer.png"
+            className="w-12"
+            width={100}
+            height={100}
+            alt="impact illustration"
+          />
+              </div>
+                <h6 className="text-center text-lg font-semibold text-gray-700 dark:text-white">
                   Volunteer opportunities
                 </h6>
                 <p className="text-sm mt-2 text-gray-500">

@@ -10,6 +10,8 @@ import { parseCookies } from "nookies";
 
 import PostTask from "@/components/PostTask";
 import Form from "@/components/Form";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 
 export default function Post({postsData,user}) {
@@ -38,6 +40,9 @@ export default function Post({postsData,user}) {
   return (
     <div className="bg-gray-900"
     >
+       <div className="pb-12">
+     <Navbar user = {user} />
+     </div>
        <Form postTask={postTask} user={user} setPosts={setPosts} task={"project"}/>
     <div className="grid md:grid-cols-2 grid-cols-1 px-2 py-10 w-full justify-center items-center  ">
 
@@ -59,6 +64,7 @@ export default function Post({postsData,user}) {
 {/* </InfiniteScroll> */}
 
   </div>
+  <Footer />
   </div>
   )
 }

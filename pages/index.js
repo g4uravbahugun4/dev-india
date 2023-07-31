@@ -17,7 +17,7 @@ const Home = ({user}) => {
       {/* <Stats /> */}
       <Testimonial />
       <CallToAction />
-      <Blog />
+      {/* <Blog /> */}
       <Footer />
     </div>
   )
