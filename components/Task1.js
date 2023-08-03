@@ -6,7 +6,7 @@ const Task1 = ({user}) => {
     <div className='bg-white  dark:bg-gray-900'>
    
       <div className="px-4 pt-16">
-        <div className="w-11/12 mx-auto bg-white rounded-lg shadow-lg p-8">
+        <div className="w-11/ mx-auto bg-white rounded-lg shadow-lg p-8">
           <div className='pb-10'>
             <Link href="/"><img className='w-8 cursor-pointer' src="/images/back_arrow_icon.svg" alt="" /></Link>
             <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">Identify Nearest Priority Areas:</h1>
@@ -72,45 +72,45 @@ const Task1 = ({user}) => {
             <div class="container mx-auto mt-10">
               <div class="grid grid-cols-3 gap-4">
               
-                <div class="bg-gray-200 p-4 rounded-lg shadow-md">
-                  <img src="/mapping_images/1.jpg" alt="Image 1" class="w-full h-40 object-cover rounded-lg"/>
+                <div class="bg-gray-200 sm:p-4 p-1 rounded-lg shadow-md">
+                  <img src="/mapping_images/1.jpg" alt="Image 1" class="w-full h-20 sm:h-40 object-cover rounded-lg"/>
                 </div>
-                <div class="bg-gray-200 p-4 rounded-lg shadow-md">
-                  <img src="/mapping_images/2.jpg" alt="Image 2" class="w-full h-40 object-cover rounded-lg"/>
+                <div class="bg-gray-200 sm:p-4 p-1 rounded-lg shadow-md">
+                  <img src="/mapping_images/2.jpg" alt="Image 2" class="w-full h-20 sm:h-40 object-cover rounded-lg"/>
                 </div>
-                <div class="bg-gray-200 p-4 rounded-lg shadow-md">
-                  <img src="/mapping_images/3.jpg" alt="Image 3" class="w-full h-40 object-cover rounded-lg"/>
+                <div class="bg-gray-200 sm:p-4 p-1 rounded-lg shadow-md">
+                  <img src="/mapping_images/3.jpg" alt="Image 3" class="w-full h-20 sm:h-40 object-cover rounded-lg"/>
                 </div>
 
               
-                <div class="col-span-1 bg-gray-200 p-4 rounded-lg shadow-md">
-                  <div class="grid grid-rows-2 gap-4">
-                    <img src="/mapping_images/4.jpg" alt="Image 4" class="w-full h-40 object-cover rounded-lg" />
-                    <img src="/mapping_images/5.jpg" alt="Image 5" class="w-full h-40 object-cover rounded-lg mt-4" />
+                <div class="col-span-1 bg-gray-200 sm:p-4 p-1 rounded-lg shadow-md">
+                  <div class="grid grid-rows-2 sm:gap-4 gap-0 ">
+                    <img src="/mapping_images/4.jpg" alt="Image 4" class="w-full h-20 sm:h-40 object-cover rounded-lg" />
+                    <img src="/mapping_images/5.jpg" alt="Image 5" class="w-full h-20 sm:h-40 object-cover rounded-lg mt-4" />
                   </div>                   
                   </div>
                   
-                  <div class="col-span-3 md:col-span-1 bg-gray-200  rounded-md shadow-md">
-                  <img src='/images/location.jpg'  class="w-full h-full m-auto p-5 object-cover rounded-full"/>
+                <div class="col-span-1 md:col-span-1 sm:w-full sm:h-full sm:m-auto sm:mt-auto rounded-md w-full h-full m-auto mt-auto ">
+                  <img src='/images/location.jpg' class=" sm:m-auto sm:mt-auto mt-auto  m-auto p-1 sm:p-5 object-cover rounded-full"/>
                   </div>
                 
                 
-                  <div class="col-span-1 bg-gray-200 p-4 rounded-lg shadow-md">
-                    <div class="grid grid-rows-2 gap-4">
-                    <img src="/mapping_images/6.jpg" alt="Image 7" class="w-full h-40 object-cover rounded-lg"/>
-                    <img src="/mapping_images/7.jpg" alt="Image 8" class="w-full h-40 object-cover rounded-lg mt-4"/>
+                <div class="col-span-1 bg-gray-200 sm:p-4 p-1 rounded-lg shadow-md">
+                    <div class="grid grid-rows-2 sm:gap-4 gap-0">
+                    <img src="/mapping_images/6.jpg" alt="Image 7" class="w-full h-20 sm:h-40 object-cover rounded-lg"/>
+                    <img src="/mapping_images/7.jpg" alt="Image 8" class="w-full h-20 sm:h-40 object-cover rounded-lg mt-4"/>
                         </div>
                     </div>
 
                     
-                    <div class="bg-gray-200 p-4 rounded-lg shadow-md">
-                  <img src="/mapping_images/8.jpg" alt="Image 9" class="w-full h-40 object-cover rounded-lg"/>
+                <div class="bg-gray-200 sm:p-4 p-1 rounded-lg shadow-md">
+                  <img src="/mapping_images/8.jpg" alt="Image 9" class="w-full h-20 sm:h-40    object-cover rounded-lg"/>
                     </div>
-                    <div class="bg-gray-200 p-4 rounded-lg shadow-md">
-                  <img src="/mapping_images/9.jpg" alt="Image 10" class="w-full h-40 object-cover rounded-lg"/>
+                <div class="bg-gray-200 sm:p-4 p-1 rounded-lg shadow-md">
+                  <img src="/mapping_images/9.jpg" alt="Image 10" class="w-full h-20 sm:h-40 object-cover rounded-lg"/>
                     </div>
-                    <div class="bg-gray-200 p-4 rounded-lg shadow-md">
-                  <img src="/mapping_images/10.jpg" alt="Image 11" class="w-full h-40 object-cover rounded-lg"/>
+                <div class="bg-gray-200 sm:p-4 p-1 rounded-lg shadow-md">
+                  <img src="/mapping_images/10.jpg" alt="Image 11" class="w-full h-20 sm:h-40 object-cover rounded-lg"/>
                     </div>
                   </div>
                 </div>
