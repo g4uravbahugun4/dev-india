@@ -51,6 +51,24 @@ body {
    @apply scale-150;
  }
 
+ /* Navbar style */
+
+li .hover-content span {
+  display: none;
+}
+
+li .hover-content:hover span {
+  display: inline-block;
+}
+
+li .hover-content:hover img {
+  display: none;
+}
+
+li .hover-content span:hover{
+  color: #9333EA;
+}
+
 
  /* profile style */
 
@@ -130,6 +148,7 @@ body {
 
 
 
+
 @media screen and (max-width:600px){
   @keyframes fade-in-out {
     0% {
@@ -150,4 +169,42 @@ body {
     animation: fade-in-out 8s ease-out;
   }
   
+}
+
+
+@media screen and (max-width:1024px){
+  li .hover-content{
+    display: flex;
+    gap: 1rem;
+  }
+  
+li .hover-content span {
+  display: block;
+}
+
+li .hover-content:hover span {
+  display: inline-block;
+}
+
+li .hover-content:hover img {
+  display: block;
+}
+}
+@media screen and (max-width:200px){
+  li .hover-content{
+    display: flex;
+    gap: .1rem;
+  }
+  
+li .hover-content span {
+  display: block;
+}
+
+li .hover-content:hover span {
+  display: inline-block;
+}
+
+li .hover-content:hover img {
+  display: block;
+}
 }
