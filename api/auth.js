@@ -21,6 +21,22 @@ router.get("/", authMiddleware, async (req, res) => {
     return res.status(500).send(`Server error`);
   }
 });
+// router.get("/ranks", authMiddleware, async (req, res) => {
+ 
+
+//   try {
+//     const user = await UserModel.find().sort({points:-1})
+//     if (!user) {
+//       return res.status(404).send("User not found");
+//     }
+
+
+//     return res.status(200).json({ user });
+//   } catch (error) {
+//     console.error(error);
+//     return res.status(500).send(`Server error`);
+//   }
+// });
 router.post("/", async (req, res) => {
   const {client_id, jwtToken } = req.body.user;
 

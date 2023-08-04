@@ -7,12 +7,7 @@ const authMiddleware = require("../middleware/authMiddleware");
 router.post("/", authMiddleware, async (req, res) => {
      const { userId } = req; 
      const {name,task,status,img,index,time,
-      rookies,
-      traine,
-      elite,
-      core,
-      dev,
-      userpicUrl
+      
     }=req.body
   try {
  let user
@@ -25,12 +20,15 @@ user.some(status=> status.status === "complete"&&status.index===index);
 if(exists){
   return res.status(401).send(" data already exist");
 }
+const userpoints = await UserModel.findById(userId)
+
 if(Date.now()<time||exists){
 
   user = await TaskModel.findOne({user:userId})
   const exists =
   user.filter(status=> status.status === "completed"&&status.index===index);
   exists.status,
+  userpicUrl
   exists.time=Date.now(),
   exists.a=img[0]
   exists.b=img[1]
@@ -51,6 +49,11 @@ if(Date.now()<time||exists){
   task,
   status,
   index,
+  rookies:userpoints.rookies,
+  traine:userpoints.traine,
+  elite:userpoints.elite,
+  core:userpoints.core,
+  dev:userpoints.dev,
   time:Date.now(),
   a:img[0],
   b:img[1],
@@ -68,7 +71,7 @@ if(Date.now()<time||exists){
 }
 
 let point=[1,2,4,5,6,7,8,9,0,10]
-const userpoints = await UserModel.findById(userId)
+
 userpoints.points=point[index]
 if(time!="0"){
   let days = 7;

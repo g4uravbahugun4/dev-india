@@ -7,7 +7,7 @@ function Slider({slides,current,setCurrent,setImg}) {
    const[selected,setSelected]=useState(current)
   return (
    <>
-   <div ref={scrollRef} className='w-full relative overflow-x-scroll  '>
+   <div ref={scrollRef} className='w-full relative overflow-x-scroll rounded-lg hover:bg-gradient-to-b from-gray-700 to-transparent  '>
     {/* <Track current={current}> */}
     <ul className='flex  relative list-none  md:mr-40 md:w-auto  md:p-10 p-5 w-3/4'>
      

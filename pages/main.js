@@ -60,7 +60,7 @@ let tasklist=list==="task"?task:project;
           <Mapping type={"mapping"} />
           <Mapping type={"cleaning"}/>
           <Mapping type={"growing"} />
-          <h1 className='absolute font-extrabold  text-transparent bg-clip-text bg-gradient-to-b from-cyan-300  to-purple-400 text-3xl  left-0 -top-10'>Gallery :</h1>
+          {/* <h1 className='absolute font-extrabold  text-transparent bg-clip-text bg-gradient-to-b from-cyan-300  to-purple-400 text-3xl  left-0 -top-10'>Gallery :</h1> */}
         </div>
 
         <main className='w-full h-full rounded-md p-3 mt-10 bg-[#ffffff2c] '>

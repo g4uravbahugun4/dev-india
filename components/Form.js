@@ -8,12 +8,13 @@ function Form({ name, task, status, index, time, postTask, user, setPosts }) {
 
   const [link, setLink] = useState();
   const [images, setImgs] = useState(null);
-  const [media, setMedia] = useState(null);
+  const [media, setMedia] = useState([]);
   const [taskname, setName] = useState("");
   const [loading, setLoading] = useState(false);
 
   // const inputRef = useRef();
   const [error, setError] = useState(null);
+
 
   const handelSubmit = async (e) => {
     e.preventDefault();
@@ -82,7 +83,7 @@ function Form({ name, task, status, index, time, postTask, user, setPosts }) {
     }
     if (images) {
       setImgs(null);
-      mediaPreview.length = 0;
+      setMedia(null)
     }
     setLoading(false);
   };
@@ -92,16 +93,18 @@ function Form({ name, task, status, index, time, postTask, user, setPosts }) {
 
     for (let index = 0; index < e.target.files.length; index++) {
       let url = URL.createObjectURL(e.target.files[index]);
-      mediaPreview.push(url);
+      setMedia(prev=>[url, ...prev])
     }
   };
 
   return (
     <div className="p-10">
+
       <form
-        className="w-full bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] profile-page rounded-lg p-10 flex flex-col  justify-center items-center   "
+        className={`w-full  profile-page rounded-lg p-10 flex flex-col  ${task==="project"?"border border-yellow-300":"border border-gray-200"}  justify-center items-center   `}
         onSubmit={handelSubmit}
       >
+         <h1 className=" flex justify-center items-center w-full font-semibold text-lg">{task==="project"?"Project":"Task"}</h1>
         <h1 className=" flex w-full font-semibold text-lg">Images</h1>
 
         <input
@@ -112,11 +115,11 @@ function Form({ name, task, status, index, time, postTask, user, setPosts }) {
           type="file"
         />
 
-        {mediaPreview.length > 0 && (
+        {media.length > 0 && (
           <div>
             <h1 className="flex w-full font-semibold text-lg mt-4 ">Preview</h1>
             <div className="cursor-pointer gap-2 w-4/5 flex sm:grid overflow-x-scroll grid-cols-2 md:grid-cols-3 p-2 bg-slate-800 rounded-lg m-auto">
-              {mediaPreview.map((img, index) => (
+              {media.map((img, index) => (
                 <img
                   className="w-11/12  sm:w-full min-h-[16rem] rounded-3xl"
                   key={index}
