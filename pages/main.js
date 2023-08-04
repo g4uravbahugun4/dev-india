@@ -63,7 +63,7 @@ let tasklist=list==="task"?task:project;
           {/* <h1 className='absolute font-extrabold  text-transparent bg-clip-text bg-gradient-to-b from-cyan-300  to-purple-400 text-3xl  left-0 -top-10'>Gallery :</h1> */}
         </div>
 
-        <main className='w-full h-full rounded-md p-3 mt-10 bg-[#ffffff2c] '>
+        <main className=' sm:m-8 m-1 h-full rounded-md p-3 mt-10 bg-gray-600 bg-opacity-50 '>
           
         <div className='flex justify-center items-center'>          
         <div onClick={() => { setList("task") }} className={`${list == 'task' ? 'font-bold text-3xl text-[#dcff2b]    text-center  p-3' :'font-semibold text-sm text-white text-center tracking-wider  hover:scale-110 transition-all  cursor-pointer p-3  hover:text-[#eeff97]'} `}>Task List</div>
@@ -81,7 +81,7 @@ let tasklist=list==="task"?task:project;
 {tasklist.map((data,index)=>(
  <Link className=' rounded-xl' href={{ pathname: '/tasks', query: { name: data }, }}>
 
- <div href="#_" className="p-3 m-2  rounded-xl bg-[#407364] text-gray-200 font-bold text-xl text-center  overflow-hidden group  relative hover:bg-gradient-to-r  hover:from-[rgb(10,98,69)] hover:to-[rgb(16,185,129)]  hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
+ <div href="#_" className="p-3 m-2  rounded-xl bg-gray-900 text-gray-200 font-bold text-xl text-center  overflow-hidden group  relative hover:bg-gradient-to-r  hover:from-[rgb(10,98,69)] hover:to-[rgb(16,185,129)]  hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
 
    <ul role="list" className=" h-full divide-y divide-gray-200 dark:divide-gray-700">
      <li className="">
