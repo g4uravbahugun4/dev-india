@@ -11,19 +11,26 @@ module.exports = {
   // darkMode: 'media', 
   theme: {
     screens: {
+      xs: "450px",
       sm: '640px',
       md: '768px',
       lg: '1024px',
       xl: '1280px',
       '2xl': '1536px',
     },
+
+   
     colors: ({ colors }) => ({
       inherit: colors.inherit,
       current: colors.current,
       transparent: colors.transparent,
       primary: "#9333EA",
       secondary: "#ff7e33",
+      tertiary: "#151030",
       info: "#0C63E7",
+      "black-100": "#100d25",
+      "black-200": "#090325",
+      "white-100": "#f3f3f3",
       black: colors.black,
       white: colors.white,
       slate: colors.slate,
@@ -227,6 +234,7 @@ module.exports = {
     },
     boxShadow: {
       sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
+      card: "5px 35px 120px 5px #322c5c",
       DEFAULT: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
       md: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
       lg: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',

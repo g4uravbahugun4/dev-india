@@ -11,18 +11,18 @@ function PostTask({post,user,setPosts}) {
   return (
     
         
-       <div className={`flex flex-col z-10 border-4 rounded-lg  0 relative bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] ${post.task==="task"?"from-gray-900 via-gray-100 to-gray-900":"from-yellow-700 via-amber-100 to-yellow-700"}`}>
+       <div className={`flex shadow-card  flex-col z-10 border rounded-lg   0 relative bg-gradient-to-tr from-gray-900 via-tertiary to-gray-800 ${post.task==="task"?" border-gray-300 ":" border-yellow-300 "}`}>
           <div onClick={() => likePost( post._id, user._id, setLikes, isLiked ? false : true)} className={`absolute right-5 flex justify-center shadow-inner shadow-black ${post.task==="task"?isLiked?"bg-gradient-to-tr shadow-white from-transparent to-blue-900":"bg-transparent ":isLiked?"bg-gradient-to-tr shadow-white from-transparent to-rose-400":"bg-transparent "} cursor-pointer top-3 h-8 rounded-lg w-20 `}>{isLiked?<>voted {likes.length}</>:<>vote {likes.length}</>}</div>
          <div  className='bg-red-400 active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-2 py-1 rounded-full outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150 absolute -right-1 -top-7 cursor-pointer' onClick={() => deletePost(post._id, setPosts)}> x</div> 
        <div
         
         className="absolute -z-10 -left-0  -top-5 inset-0   "
       >
-        <div className={` h-5 blur-[5px]    bg-gradient-to-r ${post.task==="task"? "to-gray-500 from-white":"to-yellow-200 from-amber-100"}`}></div>
+        {/* <div className={` h-5 blur-[5px]    bg-gradient-to-r ${post.task==="task"? "to-gray-500 from-white":"to-yellow-200 from-amber-100"}`}></div> */}
         {/* <div className="blur-[106px] opacity-30 h-32 bg-gradient-to-r from-cyan-400 to-indigo-600"></div> */}
       
       </div>
-       <div className={"flex py-1  border-b-4  rounded-tl-lg "}>
+       <div className={`flex py-1  border-b ${post.task==="task"?"border-gray-300 shadow shadow-gray-200  ":"border-yellow-300 shadow shadow-yellow-200" } rounded-tl-lg `}>
       
       <div className=" flex  px-2 ">
         <img
@@ -75,14 +75,14 @@ function PostTask({post,user,setPosts}) {
           {/* </Link> */}
          
         </div>
-        <div className=" flex flex-wrap py-2  text-gray-900  break-normal justify-center font-extrabold  items-center ">
+        <div className={` flex flex-wrap py-2 ${post.task==="task"?"text-gray-200":"text-yellow-500 "}  break-normal justify-center font-extrabold  items-center `}>
           <p className="break-all font-bold text-xl ">{post.task==="task"?"Task":"Project"} - <font className="font-medium text-base">{post.taskname?post.taskname:"unknown"}</font></p>
         </div>
         
       </div>
     </div>
-        <main className='w-full h-96 overflow-y-scroll'>
-           <p className='break-all text-gray-900 font-medium p-5'>
+        <main className='w-full h-96 overflow-auto scroll-m-1 '>
+           <p className='break-all text-white font-medium p-5'>
        {post.text}
       
         </p>

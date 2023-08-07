@@ -2,7 +2,7 @@ import uploadPic from "@/utils/uploadPicToCloudinary";
 import React, { useState, useRef } from "react";
 import { submitNewTask, submitNewPost } from "@/utils/postActions";
 import { toast } from "react-toastify";
-let mediaPreview = [];
+
 function Form({ name, task, status, index, time, postTask, user, setPosts }) {
   const [category, setCategory] = useState();
 
@@ -115,7 +115,7 @@ function Form({ name, task, status, index, time, postTask, user, setPosts }) {
           type="file"
         />
 
-        {media.length > 0 && (
+        {media?.length > 0 && (
           <div>
             <h1 className="flex w-full font-semibold text-lg mt-4 ">Preview</h1>
             <div className="cursor-pointer gap-2 w-4/5 flex sm:grid overflow-x-scroll grid-cols-2 md:grid-cols-3 p-2 bg-slate-800 rounded-lg m-auto">
