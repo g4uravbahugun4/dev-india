@@ -18,19 +18,10 @@ const toastError = error => toast.error(catchErrors(error));
 
 
 export const submitNewTask = async (
-  name,task,status,img,index,time, rookies,
- traine, elite, core, dev,userpicUrl
+  name,task,status,img,index,time
 ) => {
   try {
-     await Axios.post("/", { name,task,status,img,index,time,
-      rookies,
-
-      traine,
-      elite,
-    
-      core,
-    
-      dev ,userpicUrl});
+     await Axios.post("/", { name,task,status,img,index,time});
 
     // const newPost = {
     //   ...res.data,

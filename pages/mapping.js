@@ -38,19 +38,102 @@ let arr= [post[img]?.a,post[img]?.b,post[img]?.c,post[img]?.d,post[img]?.e,post[
      
      
       <h1 className='text-center text-xl p-3'>Your Mapping Gallery</h1>
-      <div className='cursor-pointer gap-2 w-4/5 flex sm:grid overflow-x-scroll grid-cols-2 md:grid-cols-3 p-2 bg-slate-800 rounded-lg m-auto'>       
-            {arr.map((img,index)=>(
-             
-             <img
-             className='w-11/12  sm:w-full min-h-[16rem] rounded-3xl'
-               key={index}
-             
-               src={img}
-               alt="PostImage"
-               centered
-               size="medium"
-             />))}
+      <div className="container w-full mx-auto mt-10">
+        <div className="grid grid-cols-3 gap-2 sm:gap-4">
+          <div className=" sm:p-4 p-1 rounded-lg shadow shadow-slate-500">
+            <img
+              src={arr[9]}
+              alt="Image 1"
+              className="w-full h-20 sm:h-40 object-cover rounded-lg"
+            />
+          </div>
+          <div className="sm:p-4 p-1 rounded-lg shadow shadow-slate-500">
+            <img
+              src={arr[8]}
+              alt="Image 2"
+              className="w-full h-20 sm:h-40 object-cover rounded-lg"
+            />
+          </div>
+          <div className=" sm:p-4 p-1 rounded-lg shadow shadow-slate-500">
+            <img
+              src={arr[7]}
+              alt="Image 3"
+              className="w-full h-20 sm:h-40 object-cover rounded-lg"
+            />
+          </div>
+
+     
+            <div className="grid  sm:gap-4 gap-2 ">
+              <div className="shadow shadow-slate-500 sm:p-4 p-1 flex justify-center items-center rounded-lg">
+                <img
+                  src={arr[6]}
+                  alt="Image 4"
+                  className="w-full h-20 sm:h-40 object-cover rounded-lg"
+                />
+              </div>
+              <div className="shadow flex shadow-slate-500  sm:p-4 p-1  justify-center items-center rounded-lg">
+                
+                <img
+                  src={arr[5]}
+                  alt="Image 5"
+                  className="w-full h-20 sm:h-40 object-cover rounded-lg "
+                />
+              </div>
+            </div>
+        
+
+          <div className=" grid ">
+            <img
+              src="/images/location.jpg"
+              className=" sm:m-auto sm:mt-auto mt-auto  m-auto p-1 sm:p-5 object-cover rounded-full"
+            />
+          </div>
+
+         
+            <div className="grid sm:gap-4 gap-2">
+              <div className="shadow shadow-slate-500  sm:p-4 p-1 flex justify-center items-center rounded-lg">
+                {" "}
+                <img
+                  src={arr[4]}
+                  alt="Image 7"
+                  className="w-full h-20 sm:h-40 object-cover rounded-lg"
+                />
+              </div>
+              <div>
+                <div className="shadow shadow-slate-500 sm:p-4 p-1 flex  justify-center items-center rounded-lg">
+                  <img
+                    src={arr[3]}
+                    alt="Image 8"
+                    className="w-full h-20 sm:h-40 object-cover rounded-lg "
+                  />
+                </div>
+              </div>
+            </div>
+          
+
+          <div className=" sm:p-4 p-1 rounded-lg shadow shadow-slate-500">
+            <img
+              src={arr[2]}
+              alt="Image 9"
+              className="w-full h-20 sm:h-40    object-cover rounded-lg"
+            />
+          </div>
+          <div className=" sm:p-4 p-1 rounded-lg shadow shadow-slate-500">
+            <img
+              src={arr[1]}
+              alt="Image 10"
+              className="w-full h-20 sm:h-40 object-cover rounded-lg"
+            />
+          </div>
+          <div className="sm:p-4 p-1 rounded-lg shadow shadow-slate-500">
+            <img
+              src={arr[0]}
+              alt="Image 11"
+              className="w-full h-20 sm:h-40 object-cover rounded-lg"
+            />
+          </div>
         </div>
+      </div>
 
 
         <Slider slides={post} setImg={setImg} current={slideIndex} setCurrent={setSlideIndex}/>

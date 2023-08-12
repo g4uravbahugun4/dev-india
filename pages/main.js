@@ -95,9 +95,9 @@ let tasklist=list==="task"?task:project;
            </p>
 
          </div>
-         <span className={`inline-flex items-center  ${user?.time[index]?.competed?"text-green-300 bg-green-900":"text-rose-300 bg-rose-900"}   text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full  `}>
-           <span className={`w-2 h-2 mr-1 ${user?.time&&user?.time[index]?.competed?"bg-green-500":"bg-rose-500"} rounded-full`}></span>
-          {user?.time&&user?.time[index]?.competed?<>completed</>:<>inprogress</>}
+         <span className={`inline-flex items-center  ${user?.time[index]?.completed?"text-green-300 bg-green-900":"text-rose-300 bg-rose-900"}   text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full  `}>
+           <span className={`w-2 h-2 mr-1 ${user?.time&&user?.time[index]?.completed?"bg-green-500":"bg-rose-500"} rounded-full`}></span>
+          {user?.time&&user?.time[index]?.completed?<>completed</>:<>inprogress</>}
          </span>
        </div>
      </li>

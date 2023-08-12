@@ -6,12 +6,11 @@ const authMiddleware = require("../middleware/authMiddleware");
 
 router.post("/", authMiddleware, async (req, res) => {
      const { userId } = req; 
-     const {name,task,status,img,index,time,
-      
+     const {task,status,img,index,time,
     }=req.body
   try {
  let user
-
+console.log("my friends")
  user = await TaskModel.find({user:userId})
 
  const exists =
@@ -28,7 +27,7 @@ if(Date.now()<time||exists){
   const exists =
   user.filter(status=> status.status === "completed"&&status.index===index);
   exists.status,
-  userpicUrl
+ 
   exists.time=Date.now(),
   exists.a=img[0]
   exists.b=img[1]
@@ -45,10 +44,11 @@ if(Date.now()<time||exists){
 }else{
  user = new TaskModel({
   user:userId,
-  name,
+  name:userpoints.name,
   task,
   status,
   index,
+  userpicUrl:userpoints.userimg,
   rookies:userpoints.rookies,
   traine:userpoints.traine,
   elite:userpoints.elite,
