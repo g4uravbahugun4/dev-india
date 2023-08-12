@@ -8,7 +8,7 @@ const Task1 = ({ user }) => {
       <div className="px-2 md:px-4 pt-16">
         <div className="md:w-11/12 w-full mx-auto bg-white rounded-lg shadow-lg p-2 md:p-8">
           <div className="pb-10">
-            <Link href="/">
+            <Link href="/main">
               <img
                 className="w-8 cursor-pointer"
                 src="/images/back_arrow_icon.svg"

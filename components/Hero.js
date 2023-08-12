@@ -32,32 +32,24 @@ const Hero = () => {
             <div className="mt-16 flex flex-wrap justify-center gap-y-4 gap-x-6">
               <Link
                 href="/main"
-                className="animate-slide-in-left relative flex h-11 w-4/6 items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
+                className="animate-slide-in-left relative flex h-11 w-3/4 items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-1/4"
               >
                 <span className="relative text-base font-semibold text-white">
                   Get started
                 </span>
               </Link>
-              <a
-                href="#"
-                className="animate-slide-in-right relative flex h-11 w-4/6 items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:border before:border-transparent before:bg-primary/10 before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 sm:w-max"
-              >
-                <span className="relative text-base font-semibold text-primary dark:text-white">
-                  Learn more
-                </span>
-              </a>
             </div>
             <div className="hidden py-8 mt-16 border-y border-gray-100 dark:border-gray-800 sm:flex justify-between">
               <div className="text-center">
-              <div className="flex items-center justify-center pb-4">
-              <Image
-            src="/images/clients/impact.png"
-            className="w-12"
-            width={100}
-            height={100}
-            alt="impact illustration"
-          />
-          </div>
+                <div className="flex items-center justify-center pb-4">
+                  <Image
+                    src="/images/clients/impact.png"
+                    className="w-12"
+                    width={100}
+                    height={100}
+                    alt="impact illustration"
+                  />
+                </div>
                 <h6 className="text-center text-lg font-semibold text-gray-700 dark:text-white">
                   Impact stories
                 </h6>
@@ -67,15 +59,15 @@ const Hero = () => {
                 </p>
               </div>
               <div className="text-center">
-              <div className="flex items-center justify-center pb-4">
-              <Image
-            src="/images/clients/donation.png"
-            className="w-12"
-            width={100}
-            height={100}
-            alt="donation illustration"
-          />
-          </div>
+                <div className="flex items-center justify-center pb-4">
+                  <Image
+                    src="/images/clients/donation.png"
+                    className="w-12"
+                    width={100}
+                    height={100}
+                    alt="donation illustration"
+                  />
+                </div>
                 <h6 className="text-center text-lg font-semibold text-gray-700 dark:text-white">
                   Donation options
                 </h6>
@@ -85,15 +77,15 @@ const Hero = () => {
                 </p>
               </div>
               <div className="text-center">
-              <div className="flex items-center justify-center pb-4">
-              <Image
-            src="/images/clients/volunteer.png"
-            className="w-12"
-            width={100}
-            height={100}
-            alt="impact illustration"
-          />
-              </div>
+                <div className="flex items-center justify-center pb-4">
+                  <Image
+                    src="/images/clients/volunteer.png"
+                    className="w-12"
+                    width={100}
+                    height={100}
+                    alt="impact illustration"
+                  />
+                </div>
                 <h6 className="text-center text-lg font-semibold text-gray-700 dark:text-white">
                   Volunteer opportunities
                 </h6>

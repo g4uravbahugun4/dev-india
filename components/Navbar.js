@@ -148,7 +148,7 @@ function Navbar({ user }) {
                         }}
                       />
                     ) : (
-                      <div className="hover-content block md:px-4 cursor-pointer">
+                      <div onClick={logoutUser} className="hover-content block md:px-4 cursor-pointer">
                       
                         <Image
         src="images/logoutL.svg"

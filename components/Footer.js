@@ -12,8 +12,8 @@ const Footer = () => {
                   <span className="self-center pt-3 text-2xl font-semibold whitespace-nowrap text-white">{`Let's Dev India`}</span>
               </a>
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-              <div>
+          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-2">
+              {/* <div>
                   <h2 className="mb-6 text-sm font-semibold  uppercase text-white">Resources</h2>
                   <ul className="text-gray-600  font-medium">
                       <li className="mb-4">
@@ -23,7 +23,7 @@ const Footer = () => {
                           <a href="#" className="hover:underline">Resources</a>
                       </li>
                   </ul>
-              </div>
+              </div> */}
               <div>
                   <h2 className="mb-6 text-sm font-semibold uppercase text-white">Follow us</h2>
                   <ul className="text-gray-600  font-medium">
