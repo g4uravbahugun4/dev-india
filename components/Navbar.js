@@ -38,13 +38,13 @@ function Navbar({ user }) {
                 className="flex space-x-2 items-center"
               >
                 <div aria-hidden="true" className="flex space-x-1">
-                <Image
-                        src="/images/clients/logo.svg"
-                        className="w-8"
-                        width={100}
-                        height={100}
-                        alt="logo illustration"
-                      />
+                  <Image
+                    src="/images/clients/logo.svg"
+                    className="w-8"
+                    width={100}
+                    height={100}
+                    alt="logo illustration"
+                  />
                 </div>
                 <span className="text-2xl font-bold text-gray-900 dark:text-white">
                   {`Let's Dev India`}
@@ -83,51 +83,57 @@ function Navbar({ user }) {
                             dark:shadow-none dark:bg-gray-800 dark:border-gray-700"
             >
               <div className="text-gray-600 dark:text-gray-300 lg:pr-4 lg:w-auto w-full lg:pt-0">
-                <ul className="tracking-wide font-medium lg:text-sm flex-col flex lg:flex-row gap-6 lg:gap-0">
-                <li>
-  <Link href="/posttask" className="block md:px-4 transition hover:text-primary">
-    <div className="hover-content">
-      <Image
-        src="/images/clients/task.svg"
-        className="w-6"
-        width={100}
-        height={100}
-        alt="impact illustration"
-      />
-      <span>Post Task</span>
-    </div>
-  </Link>
-</li>
-<li>
-  <Link href="/postProject" className="block md:px-4 transition hover:text-primary">
-    <div className="hover-content">
-      <Image
-        src="/images/clients/project.svg"
-        className="w-6"
-        width={100}
-        height={100}
-        alt="impact illustration"
-      />
-      <span>Post Project</span>
-    </div>
-  </Link>
-</li>
+                <ul className="tracking-wide font-medium lg:text-sm flex-col flex lg:flex-row gap-4">
+                  <li>
+                    <Link
+                      href="/posttask"
+                      className="block md:px-4 transition "
+                    >
+                      <div className="hover-content">
+                        <Image
+                          src="/images/clients/task.svg"
+                          className="w-6"
+                          width={100}
+                          height={100}
+                          alt="impact illustration"
+                        />
+                        <span>Post Task</span>
+                      </div>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/postProject"
+                      className="block md:px-4 transition "
+                    >
+                      <div className="hover-content">
+                        <Image
+                          src="/images/clients/project.svg"
+                          className="w-6"
+                          width={100}
+                          height={100}
+                          alt="impact illustration"
+                        />
+                        <span>Post Project</span>
+                      </div>
+                    </Link>
+                  </li>
 
                   {user ? (
                     <li>
                       <Link
                         href="/profile"
-                        className="block md:px-4 transition hover:text-primary"
+                        className="block md:px-4 transition "
                       >
                         <div className="hover-content">
-                        <Image
-        src="images/user.svg"
-        className="w-7"
-        width={100}
-        height={100}
-        alt="profile illustration"
-      />
-                        <span>User</span>
+                          <Image
+                            src="images/user.svg"
+                            className="w-7"
+                            width={100}
+                            height={100}
+                            alt="profile illustration"
+                          />
+                          <span>User</span>
                         </div>
                       </Link>
                     </li>
@@ -148,15 +154,17 @@ function Navbar({ user }) {
                         }}
                       />
                     ) : (
-                      <div onClick={logoutUser} className="hover-content block md:px-4 cursor-pointer">
-                      
+                      <div
+                        onClick={logoutUser}
+                        className="hover-content block md:px-4 cursor-pointer"
+                      >
                         <Image
-        src="images/logoutL.svg"
-        className="w-7"
-        width={100}
-        height={100}
-        alt="login illustration"
-      />
+                          src="images/logoutL.svg"
+                          className="w-7"
+                          width={100}
+                          height={100}
+                          alt="login illustration"
+                        />
                         <span>Logout</span>
                       </div>
                     )}
