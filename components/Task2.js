@@ -31,7 +31,7 @@ const Task2 = () => {
             </p>
             <div className="flex justify-center">
               <div className="container w-full mx-auto mt-10">
-                <div className="grid grid-cols-3 gap-2 sm:gap-4">
+                <div className="grid grid-cols-2 gap-2 sm:gap-4">
                   <div className=" sm:p-4 p-1 rounded-lg shadow shadow-slate-500">
                     <img
                       src="/mapping_images/1.jpg"
@@ -46,13 +46,7 @@ const Task2 = () => {
                       className="w-full h-20 sm:h-40 object-cover rounded-lg"
                     />
                   </div>
-                  <div className=" sm:p-4 p-1 rounded-lg shadow shadow-slate-500">
-                    <img
-                      src="/mapping_images/3.jpg"
-                      alt="Image 3"
-                      className="w-full h-20 sm:h-40 object-cover rounded-lg"
-                    />
-                  </div>
+                  
 
                   <div className=" sm:p-4 p-1 rounded-lg shadow shadow-slate-500">
                     <img
@@ -68,13 +62,7 @@ const Task2 = () => {
                       className="w-full h-20 sm:h-40 object-cover rounded-lg"
                     />
                   </div>
-                  <div className="sm:p-4 p-1 rounded-lg shadow shadow-slate-500">
-                    <img
-                      src="/mapping_images/10.jpg"
-                      alt="Image 11"
-                      className="w-full h-20 sm:h-40 object-cover rounded-lg"
-                    />
-                  </div>
+                  
                 </div>
               </div>
             </div>
@@ -106,7 +94,7 @@ const Task2 = () => {
             </p>
             <div className="flex justify-center">
               <div className="container w-full mx-auto mt-10">
-                <div className="grid grid-cols-3 gap-2 sm:gap-4">
+              <div className="grid grid-cols-2 gap-2 sm:gap-4">
                   <div className=" sm:p-4 p-1 rounded-lg shadow shadow-slate-500">
                     <img
                       src="/mapping_images/1.jpg"
@@ -121,13 +109,7 @@ const Task2 = () => {
                       className="w-full h-20 sm:h-40 object-cover rounded-lg"
                     />
                   </div>
-                  <div className=" sm:p-4 p-1 rounded-lg shadow shadow-slate-500">
-                    <img
-                      src="/mapping_images/3.jpg"
-                      alt="Image 3"
-                      className="w-full h-20 sm:h-40 object-cover rounded-lg"
-                    />
-                  </div>
+                  
 
                   <div className=" sm:p-4 p-1 rounded-lg shadow shadow-slate-500">
                     <img
@@ -143,13 +125,7 @@ const Task2 = () => {
                       className="w-full h-20 sm:h-40 object-cover rounded-lg"
                     />
                   </div>
-                  <div className="sm:p-4 p-1 rounded-lg shadow shadow-slate-500">
-                    <img
-                      src="/mapping_images/10.jpg"
-                      alt="Image 11"
-                      className="w-full h-20 sm:h-40 object-cover rounded-lg"
-                    />
-                  </div>
+                  
                 </div>
               </div>
             </div>

@@ -17,41 +17,58 @@ const CallToAction = () => {
               loading="lazy"
               width={400}
               height={400}
-              src="/images/avatars/avatar.webp"
-              alt="member photo"
-              className="h-8 w-8 rounded-full object-cover"
+              src=""
+              alt="1"
+              className="h-8 w-8 rounded-full object-cover bg-red-500 flex items-center justify-center text-gray-600"
+            />
+            <Image
+              loading="lazy"
+              width={400}
+              height={400}
+              src=""
+              alt="2"
+              className="h-10 w-10 rounded-full object-cover bg-orange-500 flex items-center justify-center text-gray-600"
             />
             <Image
               loading="lazy"
               width={200}
               height={200}
-              src="/images/avatars/avatar-2.webp"
-              alt="member photo"
-              className="h-12 w-12 rounded-full object-cover"
+              src=""
+              alt="3"
+              className="h-12 w-12 rounded-full object-cover bg-yellow-500 flex items-center justify-center text-gray-600"
             />
             <Image
               loading="lazy"
               width={200}
               height={200}
-              src="/images/avatars/avatar-3.webp"
-              alt="member photo"
-              className="z-10 h-16 w-16 rounded-full object-cover"
+              src=""
+              alt="4"
+              className="z-10 h-16 w-16 rounded-full object-cover bg-green-500 flex items-center justify-center text-gray-600"
+            />
+            
+            <Image
+              loading="lazy"
+              width={200}
+              height={200}
+              src=""
+              alt="5"
+              className="relative h-12 w-12 rounded-full object-cover bg-blue-500 flex items-center justify-center text-gray-600"
             />
             <Image
               loading="lazy"
               width={200}
               height={200}
-              src="/images/avatars/avatar-4.webp"
-              alt="member photo"
-              className="relative h-12 w-12 rounded-full object-cover"
+              src=""
+              alt="6"
+              className="h-10 w-10 rounded-full object-cover bg-indigo-500 flex items-center justify-center text-gray-600"
             />
             <Image
               loading="lazy"
               width={200}
               height={200}
-              src="/images/avatars/avatar-1.webp"
-              alt="member photo"
-              className="h-8 w-8 rounded-full object-cover"
+              src=""
+              alt="7"
+              className="h-8 w-8 rounded-full object-cover bg-violet-500 flex items-center justify-center text-gray-600"
             />
           </div>
           <div className="mt-6 m-auto space-y-6 md:w-8/12 lg:w-7/12">

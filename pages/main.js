@@ -66,7 +66,7 @@ let tasklist=list==="task"?task:project;
         <main className=' sm:m-8 m-1 h-full rounded-md p-3 mt-10 bg-gray-600 bg-opacity-50 '>
           
         <div className='flex justify-center items-center'>          
-        <div onClick={() => { setList("task") }} className={`${list == 'task' ? 'font-bold text-3xl text-[#dcff2b]    text-center  p-3' :'font-semibold text-sm text-white text-center tracking-wider  hover:scale-110 transition-all  cursor-pointer p-3  hover:text-[#eeff97]'} `}>Task List</div>
+        <div onClick={() => { setList("task") }} className={`${list == 'task' ? 'font-bold text-3xl text-[#ffffff]    text-center  p-3' :'font-semibold text-sm text-white text-center tracking-wider  hover:scale-110 transition-all  cursor-pointer p-3  hover:text-[#eeff97]'} `}>Task List</div>
 
         
         

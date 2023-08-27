@@ -14,15 +14,15 @@ const Testimonial = () => {
           <div className="aspect-auto p-8 border border-gray-100 rounded-3xl bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none">
             <div className="flex gap-4">
               <img
-                className="w-12 h-12 rounded-full"
-                src="./images/avatars/avatar.webp"
-                alt="user avatar"
+                className="w-12 h-12 rounded-full bg-white-100 flex items-center justify-center text-gray-600"
+                src=""
+                alt="user"
                 width="400"
                 height="400"
                 loading="lazy"
               />
               <div>
-                <h6 className="text-lg font-medium text-gray-700 dark:text-white">Rajesh Kumar</h6>
+                <h6 className="text-lg font-medium text-gray-700 dark:text-white">Member 1</h6>
                 <p className="text-sm text-gray-500 dark:text-gray-300">Environmental Activist</p>
               </div>
             </div>
@@ -34,15 +34,15 @@ const Testimonial = () => {
           <div className="aspect-auto p-8 border border-gray-100 rounded-3xl bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none">
             <div className="flex gap-4">
               <img
-                className="w-12 h-12 rounded-full"
-                src="./images/avatars/avatar-1.webp"
-                alt="user avatar"
+                className="w-12 h-12 rounded-full bg-white-100 flex items-center justify-center text-gray-600"
+                src=""
+                alt="user"
                 width="200"
                 height="200"
                 loading="lazy"
               />
               <div>
-                <h6 className="text-lg font-medium text-gray-700 dark:text-white">Anjali Verma</h6>
+                <h6 className="text-lg font-medium text-gray-700 dark:text-white">Member 2</h6>
                 <p className="text-sm text-gray-500 dark:text-gray-300">Community Organizer</p>
               </div>
             </div>
@@ -54,15 +54,15 @@ const Testimonial = () => {
           <div className="aspect-auto p-8 border border-gray-100 rounded-3xl bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none">
             <div className="flex gap-4">
               <img
-                className="w-12 h-12 rounded-full"
-                src="./images/avatars/avatar-2.webp"
-                alt="user avatar"
+                className="w-12 h-12 rounded-full bg-white-100 flex items-center justify-center text-gray-600"
+                src=""
+                alt="user"
                 width="200"
                 height="200"
                 loading="lazy"
               />
               <div>
-                <h6 className="text-lg font-medium text-gray-700 dark:text-white">Amit Sharma</h6>
+                <h6 className="text-lg font-medium text-gray-700 dark:text-white">Member 3</h6>
                 <p className="text-sm text-gray-500 dark:text-gray-300">Nature Enthusiast</p>
               </div>
             </div>
@@ -74,15 +74,15 @@ const Testimonial = () => {
           <div className="aspect-auto p-8 border border-gray-100 rounded-3xl bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none">
             <div className="flex gap-4">
               <img
-                className="w-12 h-12 rounded-full"
-                src="./images/avatars/avatar-3.webp"
-                alt="user avatar"
+                className="w-12 h-12 rounded-full bg-white-100 flex items-center justify-center text-gray-600"
+                src=""
+                alt="user"
                 width="200"
                 height="200"
                 loading="lazy"
               />
               <div>
-                <h6 className="text-lg font-medium text-gray-700 dark:text-white">Sana Khan</h6>
+                <h6 className="text-lg font-medium text-gray-700 dark:text-white">Member 4</h6>
                 <p className="text-sm text-gray-500 dark:text-gray-300">Community Leader</p>
               </div>
             </div>
@@ -94,15 +94,15 @@ const Testimonial = () => {
           <div className="aspect-auto p-8 border border-gray-100 rounded-3xl bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none">
             <div className="flex gap-4">
               <img
-                className="w-12 h-12 rounded-full"
-                src="./images/avatars/avatar-4.webp"
-                alt="user avatar"
+                className="w-12 h-12 rounded-full bg-white-100 flex items-center justify-center text-gray-600"
+                src=""
+                alt="user"
                 width="200"
                 height="200"
                 loading="lazy"
               />
               <div>
-                <h6 className="text-lg font-medium text-gray-700 dark:text-white">Vikram Singh</h6>
+                <h6 className="text-lg font-medium text-gray-700 dark:text-white">Member 5</h6>
                 <p className="text-sm text-gray-500 dark:text-gray-300">Social Activist</p>
               </div>
             </div>
@@ -114,15 +114,15 @@ const Testimonial = () => {
           <div className="aspect-auto p-8 border border-gray-100 rounded-3xl bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none">
             <div className="flex gap-4">
               <img
-                className="w-12 h-12 rounded-full"
-                src="./images/avatars/avatar-2.webp"
-                alt="user avatar"
+                className="w-12 h-12 rounded-full bg-white-100 flex items-center justify-center text-gray-600"
+                src=""
+                alt="user"
                 width="400"
                 height="400"
                 loading="lazy"
               />
               <div>
-                <h6 className="text-lg font-medium text-gray-700 dark:text-white">Rahul Dev</h6>
+                <h6 className="text-lg font-medium text-gray-700 dark:text-white">Member 6</h6>
                 <p className="text-sm text-gray-500 dark:text-gray-300">environmentalist</p>
               </div>
             </div>
