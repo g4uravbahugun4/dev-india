@@ -33,7 +33,7 @@ nextApp.prepare().then(() => {
   app.use("/api/task", require("./api/task"));
   app.use("/api/newtask", require("./api/newtask"));
   app.use("/api/payment",require("./api/payment"));
-
+  app.use("/api/profile", require("./api/profile"));
   app.all("*", (req, res) => handle(req, res));
   
   httpServer.listen(PORT, err => {

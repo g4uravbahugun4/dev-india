@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
-// import uploadPic from "../utils/uplodesinglefile";
-// import { profileUpdate } from "@/utils/profileActions";
+import uploadPic from "../utils/uplodesinglefile";
+import { profileUpdate } from "@/utils/profileActions";
 export default function Modal2({}) {
   const [showModal, setShowModal] = React.useState(false);
   const [media, setMedia] = useState(null);
